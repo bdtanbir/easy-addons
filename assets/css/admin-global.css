@@ -1,0 +1,221 @@
+
+.fa {
+    font-family: FontAwesome !important;
+}
+
+.menu-icon-case_study,
+.menu-icon-portfolio,
+.menu-icon-team {
+    background: linear-gradient(-45deg, #ba42ec, #8f42ec, #0073aa, #ba42ec, #8f42ec ) !important;
+    background-size: 400% 400% !important;
+    animation: gradient_background 20s ease infinite;
+    color: #ffffff !important;
+}
+@keyframes gradient_background {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.menu-icon-case_study:hover,
+.menu-icon-portfolio:hover,
+.menu-icon-team:hover,
+.menu-icon-case_study:hover .wp-menu-image:before,
+.menu-icon-portfolio:hover .wp-menu-image:before,
+.menu-icon-team:hover .wp-menu-image:before {
+    color: #ffffff !important;
+}
+
+
+/* Portfolio Meta */
+.ua-portfolio-meta-box .meta-options label {
+    display: block !important;
+    font-weight: 500 !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 13px !important;
+    margin-bottom: 5px;
+    color: #233d63;
+}
+.ua-portfolio-meta-box .meta-options {
+    margin-bottom: 15px;
+}
+.ua-portfolio-meta-box .meta-options:last-child {
+    margin-bottom: 10px;
+}
+.ua-portfolio-meta-box input[type="text"], 
+.ua-portfolio-meta-box input[type="email"], 
+.ua-portfolio-meta-box input[type="url"], 
+.ua-portfolio-meta-box input[type="password"], 
+.ua-portfolio-meta-box input[type="search"], 
+.ua-portfolio-meta-box input[type="number"], 
+.ua-portfolio-meta-box input[type="tel"], 
+.ua-portfolio-meta-box input[type="range"], 
+.ua-portfolio-meta-box input[type="date"], 
+.ua-portfolio-meta-box input[type="month"], 
+.ua-portfolio-meta-box input[type="week"], 
+.ua-portfolio-meta-box input[type="time"], 
+.ua-portfolio-meta-box input[type="datetime"], 
+.ua-portfolio-meta-box input[type="datetime-local"], 
+.ua-portfolio-meta-box input[type="color"], 
+.ua-portfolio-meta-box input, 
+.ua-portfolio-meta-box textarea, 
+.ua-portfolio-meta-box .form-control,
+#ua-metabox-team-expt input,
+#ua-metabox-team-edc input,
+#ua-metabox-team-contact-info input,
+.ua_team_social input[type="url"], 
+.ua_team_social input {
+    height: auto;
+    line-height: inherit;
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #233d63;
+    border: 1px solid #ddd;
+    font-weight: 500;
+    resize: none;
+    -webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+    -moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+    box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+}
+.ua-portfolio-meta-box input[type="text"]:focus, 
+.ua-portfolio-meta-box input[type="email"]:focus, 
+.ua-portfolio-meta-box input[type="url"]:focus, 
+.ua-portfolio-meta-box input[type="password"]:focus, 
+.ua-portfolio-meta-box input[type="search"]:focus, 
+.ua-portfolio-meta-box input[type="number"]:focus, 
+.ua-portfolio-meta-box input[type="tel"]:focus, 
+.ua-portfolio-meta-box input[type="range"]:focus, 
+.ua-portfolio-meta-box input[type="date"]:focus, 
+.ua-portfolio-meta-box input[type="month"]:focus, 
+.ua-portfolio-meta-box input[type="week"]:focus, 
+.ua-portfolio-meta-box input[type="time"]:focus, 
+.ua-portfolio-meta-box input[type="datetime"]:focus, 
+.ua-portfolio-meta-box input[type="datetime-local"]:focus, 
+.ua-portfolio-meta-box input[type="color"]:focus, 
+.ua-portfolio-meta-box input:focus, 
+.ua-portfolio-meta-box textarea:focus, 
+.ua-portfolio-meta-box .form-control:focus,
+#ua-metabox-team-edc input:focus,
+#ua-metabox-team-expt input:focus,
+#ua-metabox-team-contact-info input:focus,
+.ua_team_social input:focus,
+.ua_team_social input[type='url']:focus {
+    outline: none;
+    border-color: #eee;
+    -webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+    -moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+    box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+}
+.ua-portfolio-meta-box input[type="text"]::placeholder, 
+.ua-portfolio-meta-box input[type="email"]::placeholder, 
+.ua-portfolio-meta-box input[type="url"]::placeholder,
+.ua-portfolio-meta-box input[type="password"]::placeholder, 
+.ua-portfolio-meta-box input[type="search"]::placeholder, 
+.ua-portfolio-meta-box input[type="number"]::placeholder, 
+.ua-portfolio-meta-box input[type="tel"]::placeholder, 
+.ua-portfolio-meta-box input[type="range"]::placeholder, 
+.ua-portfolio-meta-box input[type="date"]::placeholder, 
+.ua-portfolio-meta-box input[type="month"]::placeholder, 
+.ua-portfolio-meta-box input[type="week"]::placeholder, 
+.ua-portfolio-meta-box input[type="time"]::placeholder, 
+.ua-portfolio-meta-box input[type="datetime"]::placeholder, 
+.ua-portfolio-meta-box input[type="datetime-local"]::placeholder, 
+.ua-portfolio-meta-box input[type="color"]::placeholder, 
+.ua-portfolio-meta-box input::placeholder, 
+.ua-portfolio-meta-box textarea::placeholder, 
+.ua-portfolio-meta-box .form-control::placeholder,
+#ua-metabox-team-expt input::placeholder,
+#ua-metabox-team-edc input::placeholder,
+#ua-metabox-team-contact-info input::placeholder,
+.ua_team_social input::placeholder,
+.ua_team_social input[type='url']::placeholder {
+    color: #a699a6;
+}
+.ua_team_social input::placeholder,
+.ua_team_social input[type='url']::placeholder {
+    font-weight: 400;
+}
+#ua-metabox-team-edc #edc_data .field-group,
+#ua-metabox-team-edc #education_data .field-group,
+#ua-metabox-team-expt #edc_data .field-group,
+#ua-metabox-team-expt #expertise_data .field-group {
+    display: flex;
+    margin: 0 0 5px 0;
+}
+#ua-metabox-team-edc #education_data .field-group button,
+#ua-metabox-team-expt #expertise_data .field-group button {
+    width: 36px;
+}
+#ua-metabox-team-edc #education_data .field-group .field-data-remove,
+#ua-metabox-team-edc #education_data .field-group .edc-field-data-remove,
+#ua-metabox-team-expt #expertise_data .field-group .field-data-remove {
+    width: 36px;
+    border: none;
+    background: red;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0 4px 4px 0;
+    transition: background .3s;
+}
+#ua-metabox-team-edc #education_data .field-group .field-data-remove:hover,
+#ua-metabox-team-edc #education_data .field-group .edc-field-data-remove:hover,
+#ua-metabox-team-expt #expertise_data .field-group .field-data-remove:hover,
+#ua-metabox-team-edc #education_data .field-group .field-data-remove:focus,
+#ua-metabox-team-edc #education_data .field-group .edc-field-data-remove:focus,
+#ua-metabox-team-expt #expertise_data .field-group .field-data-remove:focus {
+    background: #ea0202;
+}
+#ua-metabox-team-edc input,
+#ua-metabox-team-expt input,
+#ua-metabox-team-contact-info input,
+.ua_team_social input,
+.ua_team_social input[type='url'] {
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    padding: 8px 12px;
+}
+#ua-metabox-team-contact-info input,
+.ua_team_social input,
+.ua_team_social input[type='url'] {
+    border: 1px solid #dddddd;
+}
+#ua-metabox-team-expt #field_data_add,
+#ua-metabox-team-edc #edc-field_data_add {
+    background: #00c500;
+    border: none;
+    font-weight: 600;
+    transition: background .3s;
+}
+#ua-metabox-team-edc #edc-field_data_add:hover,
+#ua-metabox-team-edc #edc-field_data_add:focus,
+#ua-metabox-team-expt #field_data_add:hover,
+#ua-metabox-team-expt #field_data_add:focus {
+    background: #04a204;
+    outline: none;
+    box-shadow: none;
+}
+#ua-metabox-team-contact-info label,
+.ua_team_social label {
+    display: block;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #233d63;
+}
+
