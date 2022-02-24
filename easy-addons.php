@@ -82,7 +82,7 @@ function ea_admin_notice_missing_elementor() {
 
     $button = '<p><a href="' . $activation_url . '" class="button-primary">' . $button_text . '</a></p>';
 
-    printf('<div class="error UA-missing-elementor"><p>%1$s</p>%2$s</div>', $message, $button);
+    printf('<div class="error ea-missing-elementor"><p>%1$s</p>%2$s</div>', $message, $button);
 }
 
 add_action( 'admin_notices', 'ea_admin_notice_missing_elementor' );

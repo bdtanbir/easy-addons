@@ -8,7 +8,7 @@
  ll |    ll |   llllllllll |    ll |        ll |   llllllllll \    ll |     llll |
  \__\    \__|   \_________|     \__\        \__|   \__________|    \__|     \____|
 
- * Useful Addons Elementor Admin Settings Page Styles
+ * Easy Addons Elementor Admin Settings Page Styles
  *=============================================================
  */
 
@@ -16,14 +16,14 @@
 .fa {
     font-family: FontAwesome !important;
 }
-.UA-settings-wrap > * {
+.ea-settings-wrap > * {
     font-family: 'Poppins', Sans-serif;
 }
-.UA-settings-wrap {
+.ea-settings-wrap {
     padding: 15px;
     background: rgba(143, 67, 236, 0.03);
 }
-.UA-header-bar {
+.ea-header-bar {
     height: auto;
     padding: 10px 15px;
     background: #ffffff;
@@ -42,19 +42,19 @@
     justify-content: flex-end;
 }
 @media screen and (max-width: 782px) {
-    .UA-header-bar {
+    .ea-header-bar {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 }
-.UA-settings-wrap .UA-header-left {
+.ea-settings-wrap .ea-header-left {
     display: flex;
     align-content: center;
     align-items: center;
 }
 @media screen and (max-width: 782px) {
-    .UA-settings-wrap .UA-header-left {
+    .ea-settings-wrap .ea-header-left {
         align-content: center;
         flex-direction: column;
         justify-content: space-between;
@@ -62,27 +62,27 @@
         margin-bottom: 10px;
     }
 }
-.UA-header-bar .UA-admin-logo-inline {
+.ea-header-bar .ea-admin-logo-inline {
     width: 130px;
     padding: 5px 15px 5px 0;
     margin-right: 25px;
 }
-.UA-header-bar .UA-admin-logo-inline img {
+.ea-header-bar .ea-admin-logo-inline img {
     width: 100%;
 }
-.UA-header-bar .title {
+.ea-header-bar .title {
     font-size: 22px;
     color: #2e3d62;
     font-weight: 500;
     margin: 0;
 }
 
-.UA-header-left,
-.UA-header-right {
+.ea-header-left,
+.ea-header-right {
     -webkit-flex-grow: 1;
     flex-grow: 1;
 }
-.UA-header-right {
+.ea-header-right {
     text-align: right;
     display: flex;
     justify-content: flex-end;
@@ -477,7 +477,7 @@ textarea.UA-form-control {
 .UA-settings-tab img {
     max-width: 100%;
 }
-.button.UA-btn {
+.button.ea-admin-save-btn {
     background-color: #8f42ec;
     color: #fff;
     padding: 7px 20px;
@@ -495,13 +495,13 @@ textarea.UA-form-control {
     -o-transition: .3s;
     transition: .3s;
 }
-.button.UA-btn i {
+.button.ea-admin-save-btn i {
     font-size: 16px;
     display: inline-block;
     margin-right: 8px;
 }
-.button.UA-btn:hover,
-.button.UA-btn:focus {
+.button.ea-admin-save-btn:hover,
+.button.ea-admin-save-btn:focus {
     background-color: #ba42ec;
     color: #fff;
     -webkit-box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
@@ -513,37 +513,37 @@ textarea.UA-form-control {
     margin: 30px 0 20px;
 }
 
-.UA-save-btn-wrap .UA-btn {
+.UA-save-btn-wrap .ea-admin-save-btn {
     background-color: #ba42ec;
     color: #fff;
     padding: 10px 20px;
 }
-.UA-save-btn-wrap .UA-btn:hover,
-.UA-save-btn-wrap .UA-btn:focus {
+.UA-save-btn-wrap .ea-admin-save-btn:hover,
+.UA-save-btn-wrap .ea-admin-save-btn:focus {
     background-color: #ba42ec;
     color: #fff;
 }
 
-.UA-btn.UA-demo-btn {
+.ea-admin-save-btn.UA-demo-btn {
     background-color: #42418e;
     color: #fff;
 }
-.UA-btn.UA-demo-btn:hover,
-.UA-btn.UA-demo-btn:focus {
+.ea-admin-save-btn.UA-demo-btn:hover,
+.ea-admin-save-btn.UA-demo-btn:focus {
     background-color: #ff0188;
     color: #fff;
 }
 
-.UA-btn.UA-license-btn {
+.ea-admin-save-btn.UA-license-btn {
     background-color: #0dc9c3;
 }
-.UA-btn.UA-license-btn:hover,
-.UA-btn.UA-license-btn:focus {
+.ea-admin-save-btn.UA-license-btn:hover,
+.ea-admin-save-btn.UA-license-btn:focus {
     background-color: #08d1ca;
 }
-.UA-btn.UA-demo-btn,
-.UA-btn.UA-license-btn,
-.UA-btn.UA-review-btn {
+.ea-admin-save-btn.UA-demo-btn,
+.ea-admin-save-btn.UA-license-btn,
+.ea-admin-save-btn.UA-review-btn {
     padding: 10px;
     display: block;
     max-width: 250px;
@@ -572,12 +572,12 @@ textarea.UA-form-control {
     display: inline-block;
 }
 
-.go-premium .UA-btn.UA-license-btn {
+.go-premium .ea-admin-save-btn.UA-license-btn {
     background: linear-gradient(-30deg, #4d18ff, #9a7cff);
     margin-top: 30px;
     transition: all 0.3s ease;
 }
-.go-premium .UA-btn.UA-license-btn:hover {
+.go-premium .ea-admin-save-btn.UA-license-btn:hover {
     opacity: 0.85;
 }
 
@@ -636,38 +636,38 @@ textarea.UA-form-control {
 }
 
 /* Header Button */
-.UA-header-bar .UA-btn,
-.UA-save-btn-wrap .UA-btn {
+.ea-header-bar .ea-admin-save-btn,
+.UA-save-btn-wrap .ea-admin-save-btn {
     border-radius: 30px;
     background: #8f42ec;
     height: 50px;
     transition: all 300ms ease-in-out;
     position: relative;
 }
-.UA-header-bar .UA-btn:hover,
-.UA-header-bar .UA-btn:focus {
+.ea-header-bar .ea-admin-save-btn:hover,
+.ea-header-bar .ea-admin-save-btn:focus {
     background-color: #ba42ec;
     -webkit-box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
     -moz-box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
     box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
 }
-.UA-save-btn-wrap .UA-btn.save-now,
-.UA-header-bar .UA-btn.save-now,
+.UA-save-btn-wrap .ea-admin-save-btn.save-now,
+.ea-header-bar .ea-admin-save-btn.save-now,
 .UA-fb-feed-btn.save-now {
     background: #e74c3c;
 }
-.UA-save-btn-wrap .UA-btn.save-now:hover,
-.UA-header-bar .UA-btn.save-now:hover,
+.UA-save-btn-wrap .ea-admin-save-btn.save-now:hover,
+.ea-header-bar .ea-admin-save-btn.save-now:hover,
 .UA-fb-feed-btn.save-now:hover {
     background: #ff5544;
 }
-.UA-header-bar .UA-btn.js-UA-settings-save {
+.ea-header-bar .ea-admin-save-btn.js-UA-settings-save {
     display: flex;
     right: 0;
     justify-content: flex-end;
     align-items: center;
 }
-.UA-header-bar .UA-btn svg#UA-spinner {
+.ea-header-bar .ea-admin-save-btn svg#UA-spinner {
     animation: rotating 2s infinite linear;
     margin: 0 8px 0 0;
     left: 14px;    
@@ -888,22 +888,22 @@ label.UA-get-pro + .UA-title {
     font-size: 14px;
     color: #707070;
 }
-button.UA-btn.UA-global-control-enable:focus,
-button.UA-btn.UA-global-control-disable:focus {
+button.ea-admin-save-btn.UA-global-control-enable:focus,
+button.ea-admin-save-btn.UA-global-control-disable:focus {
     outline: none;
 }
-button.UA-btn.UA-global-control-enable {
+button.ea-admin-save-btn.UA-global-control-enable {
     background: #8f43ec;
 }
 @media screen and (max-width: 782px) {
-    button.UA-btn.UA-global-control-enable {
+    button.ea-admin-save-btn.UA-global-control-enable {
         margin-bottom: 10px;
     }
 }
-button.UA-btn.UA-global-control-disable {
+button.ea-admin-save-btn.UA-global-control-disable {
     background: #f73535;
 }
-.UA-btn-group button {
+.ea-btn-group button {
     border: 0 solid;
     color: #fff;
     padding: 13px 25px;
@@ -914,12 +914,12 @@ button.UA-btn.UA-global-control-disable {
     cursor: pointer;
     transition: 300ms;
 }
-button.UA-btn.UA-global-control-enable:hover {
+button.ea-admin-save-btn.UA-global-control-enable:hover {
     background: #ba42ec;
     -webkit-box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
     box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
 }
-button.UA-btn.UA-global-control-disable:hover {
+button.ea-admin-save-btn.UA-global-control-disable:hover {
     background: #d01111;
     -moz-box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
     box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
@@ -973,7 +973,7 @@ button.UA-btn.UA-global-control-disable:hover {
 }
 
 /* Admin Notice */
-.UA-missing-elementor {
+.ea-missing-elementor {
     border-color: #dc3132;
 }
 

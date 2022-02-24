@@ -52,7 +52,7 @@ class ea_admin_menu_setting_class {
 	}
 
 	/**
-	 * UA Create an admin menu.
+	 * Easy Addons Create an admin menu.
 	 */
 	public function create_ea_elementor_admin_menu() {
 
@@ -62,7 +62,7 @@ class ea_admin_menu_setting_class {
 			'manage_options',
 			'ea_settings',
 			array( $this, 'ea_elementor_admin_settings_page' ),
-			EASY_ADDONS_ASSETS . '/admin/images/UA-logo-icon.png',
+			EASY_ADDONS_ASSETS . '/admin/images/ea-logo-icon.png',
 			5
 		);
 
@@ -78,8 +78,8 @@ class ea_admin_menu_setting_class {
 //			false,
 //			EASY_ADDONS_VERSION
 //		);
-		wp_register_style(
-			'UA-animate-css',
+		wp_enqueue_style(
+			'ea-animate-css',
 			EASY_ADDONS_ASSETS . 'css/animate.css',
 			false,
 			EASY_ADDONS_VERSION
@@ -135,7 +135,7 @@ class ea_admin_menu_setting_class {
 	}
 
 	/**
-	 * UA Create settings page.
+	 * Easy Addons Create settings page.
 	 */
 	public function ea_elementor_admin_settings_page() {
 
@@ -146,7 +146,7 @@ class ea_admin_menu_setting_class {
 
 		/**
 		 * This section will handle the "ea_elementor_save_settings" array. If any new settings options is added
-		 * then it will matches with the older array and then if it founds anything new then it will update the entire array.
+		 * then it will match with the older array and then if it founds anything new then it will update the entire array.
 		 */
 		$this->ea_elementor_default_settings = array_fill_keys( $this->ea_elementor_default_keys, true );
 		$this->ea_elementor_get_settings     = get_option( 'ea_elementor_save_settings', $this->ea_elementor_default_settings );
@@ -158,20 +158,20 @@ class ea_admin_menu_setting_class {
 		}
 		$this->ea_elementor_get_settings = get_option( 'ea_elementor_save_settings', $this->ea_elementor_default_settings );
         ?>
-        <div class="UA-settings-wrap">
-            <form action="" method="POST" id="ua_admin_settings_form" name="ua_admin_settings_form">
-                <div class="UA-header-bar">
-                    <div class="UA-header-left">
-                        <div class="UA-admin-logo-inline">
-                            <img src="<?php echo EASY_ADDONS_ASSETS . '/admin/images/UA-logo.png'; ?>" alt="<?php esc_attr_e('Useful Addons For Elementor', 'useful-addons-elementor'); ?>">
+        <div class="ea-settings-wrap">
+            <form action="" method="POST" id="ea_admin_settings_form" name="ea_admin_settings_form">
+                <div class="ea-header-bar">
+                    <div class="ea-header-left">
+                        <div class="ea-admin-logo-inline">
+                            <img src="<?php echo EASY_ADDONS_ASSETS . '/admin/images/ea-logo.png'; ?>" alt="<?php esc_attr_e('Easy Addons For Elementor', 'easy-addons'); ?>">
                         </div>
                         <h2 class="title">
-				            <?php esc_html_e('Useful Addons Settings', 'useful-addons-elementor'); ?>
+				            <?php esc_html_e('Easy Addons Settings', 'easy-addons'); ?>
                         </h2>
                     </div>
-                    <div class="UA-header-right">
-                        <button type="submit" class="button UA-btn js-UA-settings-save">
-                            <i class="fas fa-save"></i> <?php esc_html_e('Save settings', 'useful-addons-elementor'); ?>
+                    <div class="ea-header-right">
+                        <button type="submit" class="button ea-admin-save-btn js-UA-settings-save">
+                            <i class="fas fa-save"></i> <?php esc_html_e('Save settings', 'easy-addons'); ?>
                         </button>
                     </div>
                 </div>
@@ -181,13 +181,13 @@ class ea_admin_menu_setting_class {
                             <li class="UA-tab-list">
                                 <a href="#dashboard" class="active">
                                     <i class="fas fa-cogs"></i>
-                                    <span><?php esc_html_e('Dashboard', 'useful-addons-elementor'); ?></span>
+                                    <span><?php esc_html_e('Dashboard', 'easy-addons'); ?></span>
                                 </a>
                             </li>
                             <li class="UA-tab-list">
                                 <a href="#elements">
                                     <i class="fas fa-cubes"></i>
-                                    <span><?php esc_html_e('Elements', 'useful-addons-elementor'); ?></span>
+                                    <span><?php esc_html_e('Elements', 'easy-addons'); ?></span>
                                 </a>
                             </li>
                         </ul>
