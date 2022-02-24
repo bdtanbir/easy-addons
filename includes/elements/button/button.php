@@ -54,7 +54,7 @@ class ea_default_button extends Widget_Base {
 
         ?>
 
-        <a href=""><?php echo $settings['button_text'] ?></a>
+        <a href="" class="ea-button"><?php echo $settings['button_text'] ?></a>
 
     <?php }
 

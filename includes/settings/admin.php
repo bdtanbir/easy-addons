@@ -163,7 +163,7 @@ class ea_admin_menu_setting_class {
                 <div class="ea-header-bar">
                     <div class="ea-header-left">
                         <div class="ea-admin-logo-inline">
-                            <img src="<?php echo EASY_ADDONS_ASSETS . '/admin/images/ea-logo.png'; ?>" alt="<?php esc_attr_e('Easy Addons For Elementor', 'easy-addons'); ?>">
+<!--                            <img src="--><?php //echo EASY_ADDONS_ASSETS . '/admin/images/ea-logo.png'; ?><!--" alt="--><?php //esc_attr_e('Easy Addons For Elementor', 'easy-addons'); ?><!--">-->
                         </div>
                         <h2 class="title">
 				            <?php esc_html_e('Easy Addons Settings', 'easy-addons'); ?>

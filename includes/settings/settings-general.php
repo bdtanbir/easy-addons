@@ -9,7 +9,7 @@
                     </span>
                 </h2>
                 <div class="UA-admin-dashboard-card">
-                    <img src="<?php echo EASY_ADDONS_DIR_URL . '/assets/admin/images/UA-dashboard-banner.jpg'; ?>" alt="useful-addons-for-elementor">
+<!--                    <img src="--><?php //echo EASY_ADDONS_DIR_URL . '/assets/admin/images/UA-dashboard-banner.jpg'; ?><!--" alt="easy-addons-for-elementor">-->
                 </div>
 
             </div><!--admin block-wrapper end-->

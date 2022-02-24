@@ -25,6 +25,7 @@ define('EASY_ADDONS_ASSETS', trailingslashit(EASY_ADDONS_DIR_URL . 'assets'));
 require_once EASY_ADDONS_DIR_PATH . 'autoloader.php';
 // setting dashboard
 require_once EASY_ADDONS_DIR_PATH.'includes/settings/admin.php';
+require_once EASY_ADDONS_DIR_PATH . 'includes/enqueue.php';
 
 
 /**
