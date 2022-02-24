@@ -68,8 +68,12 @@ body {
 /* EA Button */
 .ea-button {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 8px 18px;
     background: var(--primary_color);
-    color: var(--white_color);
+    border: 1px solid var(--primary_color);
     border-radius: 4px;
+}
+.ea-button:hover {
+    background: #fff;
+    box-shadow: 1px 1px 7px rgb(0 0 0 / 10%) !important;
 }

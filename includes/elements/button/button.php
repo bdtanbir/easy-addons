@@ -26,7 +26,7 @@ class ea_default_button extends Widget_Base {
     private function ea_button_content() {
         $this->start_controls_section( 'ea_button',
             [
-                'label' => __( 'Button', 'easy-addons' ),
+                'label' => __( 'Button Content', 'easy-addons' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -44,8 +44,83 @@ class ea_default_button extends Widget_Base {
 
     }
 
+    // EA Button style
+    private function ea_button_style() {
+        $this->start_controls_section( 'ea_button_style',
+            [
+                'label' => __( 'Button Style', 'easy-addons' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        /* Start Tab */
+        $this->start_controls_tabs('ea_btn_tab',
+            [
+                'separator' => 'before'
+            ]
+        );
+        // normal tab
+        $this->start_controls_tab('ea_btn_normal',
+            [
+                'label' => __( 'Normal', 'easy-addons' ),
+            ]
+        );
+        $this->add_control('ea_btn_clr',
+            [
+                'label'     => __( 'Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name'     => 'ea_btn_bg',
+                'label'    => __( 'Background', 'easy-addons' ),
+                'types'    => [ 'classic', 'gradient'],
+                'selector' => '{{WRAPPER}} .ea-button',
+            ]
+        );
+        $this->end_controls_tab();
+
+        // hover tab
+        $this->start_controls_tab( 'ea_btn_hover',
+            [
+                'label' => __( 'Hover', 'easy-addons' ),
+            ]
+        );
+        $this->add_control('ea_btn_clr_hv',
+            [
+                'label'     => __( 'Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#000',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button:hover' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name'     => 'ea_btn_bg_hv',
+                'label'    => __( 'Background', 'easy-addons' ),
+                'types'    => [ 'classic', 'gradient'],
+                'selector' => '{{WRAPPER}} .ea-button:hover',
+            ]
+        );
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+        // end tab
+
+        $this->end_controls_section();
+    }
+
     protected function _register_controls() {
         $this->ea_button_content();
+        $this->ea_button_style();
     }
 
 
