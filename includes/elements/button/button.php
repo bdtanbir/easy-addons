@@ -380,6 +380,9 @@ class ea_default_button extends Widget_Base {
             [
                 'label' => __('Icon', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'ea_button_icon_show' => 'yes'
+                ]
             ]
         );
         $this->add_responsive_control( 'ea_button_icon_size',
