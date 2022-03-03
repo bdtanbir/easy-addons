@@ -22,30 +22,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 /* Transition */
-.ua-course-filter-nav li,
-.ua-course-grid-carousel .owl-dots > *,
-.ua-course-grid-carousel .owl-nav > *,
-.ua-course-pagination > *,
-.ua-course-filter-items .ua-course-list-items li:after,
-.ua-course-card-item .ua-course-list-items li:after,
-.ua-course-filter-items .ua-course-card-image:after,
-.ua-course-card-item .ua-course-card-image:after,
-.ua-icon-list-box .ua-icon-list-icon svg,
-.ua-icon-list-box .ua-icon-list-icon i,
-.ua-feature-box.ua_hv_style_3 .ua-feature-item .ua-feature__icon .div-strokes .stroke__bar,
-.ua-flip-card-item .front:after,
-.ua-flip-card-item .back:after,
-.ua-category-box-wrapper .ua-category-box-content .ua-category-box-btn i,
-.contact-pg-form .theme-button,
-.ua-feature-box .ua-feature-item .ua-feature__icon,
-.theme-button .fa__arrow,
-.theme-button,
-.UA-hero-slider-wrapper .owl-dots > .owl-dot,
-.UA-hero-slider-wrapper .owl-nav > div,
-.theme-button .fa__arrow.display_block_shape:after,
-.ua-breadcrumb-area .ua-breadcrumb-content .ua-breadcrumb__list li a,
-.UA_page_list_section .UA_page_title ul li a i,
-.ua-course-category:after,
+.ea-button-icon,
 .transition-all-3s {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -67,11 +44,15 @@ body {
 
 /* EA Button */
 .ea-button {
-    display: inline-block;
-    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
     background: var(--primary_color);
 }
 .ea-button:hover {
     background: #fff;
-    box-shadow: 1px 1px 7px rgb(0 0 0 / 10%) !important;
+}
+.ea-button .ea-button-icon {
+    text-align: center;
 }

@@ -121,6 +121,57 @@ class ea_default_button extends Widget_Base {
             ]
         );
 
+        $this->add_responsive_control( 'ea_button_width',
+            [
+                'label'      => __( 'Width', 'easy-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range'  => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 500,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_height',
+            [
+                'label'      => __( 'Height', 'easy-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range'  => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 500,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'ea_button_typography',
+                'label'    => __( 'Typography', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-button',
+            ]
+        );
+
         /* Start Tab */
         $this->start_controls_tabs('ea_btn_tab',
             [
@@ -202,6 +253,34 @@ class ea_default_button extends Widget_Base {
                 'selector' => '{{WRAPPER}} .ea-button'
             ]
         );
+        $this->add_responsive_control( 'ea_button_padding',
+            [
+                'label'      => __( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'top'    => '8',
+                    'right'  => '18',
+                    'bottom' => '8',
+                    'left'   => '18',
+                    'unit'   => 'px',
+                    'isLinked' => false,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_margin',
+            [
+                'label'      => __( 'Margin', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
         $this->end_controls_tab();
 
         // hover tab
@@ -242,13 +321,6 @@ class ea_default_button extends Widget_Base {
                 'label'      => __( 'Border Radius', 'easy-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
-                'default'    => [
-                    'top'      => '4',
-                    'right'    => '4',
-                    'bottom'   => '4',
-                    'left'     => '4',
-                    'isLinked' => true,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .ea-button:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -266,19 +338,222 @@ class ea_default_button extends Widget_Base {
                     ],
                     'box_shadow'  => [
                         'default' => [
-                            'horizontal' => 0,
-                            'vertical'   => 0,
-                            'blur'       => 10.53,
-                            'spread'     => 2.47,
-                            'color'      => 'rgba(0, 0, 0, 0.05)'
+                            'horizontal' => 1,
+                            'vertical'   => 1,
+                            'blur'       => 7,
+                            'spread'     => 0,
+                            'color'      => 'rgba(0, 0, 0, 0.1)'
                         ]
                     ]
                 ],
             ]
         );
+        $this->add_responsive_control( 'ea_button_padding_hv',
+            [
+                'label'      => __( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_margin_hv',
+            [
+                'label'      => __( 'Margin', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
         $this->end_controls_tab();
         $this->end_controls_tabs();
-        // end tab
+        /* end tab */
+
+        $this->end_controls_section();
+    }
+
+    private function ea_button_icon_style() {
+        $this->start_controls_section('ea_button_icon_style',
+            [
+                'label' => __('Icon', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_size',
+            [
+                'label'      => __( 'Font Size', 'easy-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px' ],
+                'range'  => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 100,
+                        'step' => 1,
+                    ]
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button .ea-button-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_width',
+            [
+                'label'      => __( 'Width', 'easy-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range'  => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button .ea-button-icon' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_height',
+            [
+                'label'      => __( 'Height', 'easy-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range'  => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button .ea-button-icon' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_line_height',
+            [
+                'label'      => __( 'Line Height', 'easy-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range'  => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button .ea-button-icon' => 'line-height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        /* Start Tab */
+        $this->start_controls_tabs('ea_btn_icon_tab',
+            [
+                'separator' => 'before'
+            ]
+        );
+        // normal tab
+        $this->start_controls_tab('ea_btn_icon_normal',
+            [
+                'label' => __( 'Normal', 'easy-addons' ),
+            ]
+        );
+        $this->add_control('ea_btn_icon_clr',
+            [
+                'label'     => __( 'Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button .ea-button-icon' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_padding',
+            [
+                'label'      => __( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button .ea-button-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_margin',
+            [
+                'label'      => __( 'Margin', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'top' => '0',
+                    'right' => '5',
+                    'bottom' => '0',
+                    'left'   => '0',
+                    'unit' => 'px',
+                    'isLinked' => false
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button .ea-button-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+
+        // hover tab
+        $this->start_controls_tab( 'ea_btn_icon_hover',
+            [
+                'label' => __( 'Hover', 'easy-addons' ),
+            ]
+        );
+        $this->add_control('ea_btn_icon_clr_hv',
+            [
+                'label'     => __( 'Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#233d63',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-button:hover .ea-button-icon' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_padding_hv',
+            [
+                'label'      => __( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button:hover .ea-button-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'ea_button_icon_margin_hv',
+            [
+                'label'      => __( 'Margin', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-button:hover .ea-button-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+        /* end tab */
 
         $this->end_controls_section();
     }
@@ -286,6 +561,7 @@ class ea_default_button extends Widget_Base {
     protected function _register_controls() {
         $this->ea_button_content();
         $this->ea_button_style();
+        $this->ea_button_icon_style();
     }
 
 
@@ -296,7 +572,7 @@ class ea_default_button extends Widget_Base {
         $nofollow = $settings['ea_button_url']['nofollow'] ? ' rel="nofollow"' : '';
         ?>
 
-        <a href="<?php echo esc_url($settings['ea_button_url']['url']) ?>" <?php echo $target . ' ' . $nofollow; ?> class="ea-button">
+        <a href="<?php echo esc_url($settings['ea_button_url']['url']) ?>" <?php echo $target . ' ' . $nofollow; ?> class="ea-button transition-all-3s">
             <?php
             if ($settings['ea_button_icon_show'] == 'yes') {
                 Icons_Manager::render_icon($settings['ea_button_icon'], ['class' => 'ea-button-icon', ' aria-hidden' => 'true']);
