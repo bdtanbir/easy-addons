@@ -1,15 +1,15 @@
 <div id="dashboard" class="UA-settings-tab active">
-    <div class="row UA-admin-general-wrapper">
-        <div class="UA-admin-general-inner">
-            <div class="UA-admin-block-wrapper">
+    <div class="row ea-admin-general-wrapper">
+        <div class="ea-admin-general-inner">
+            <div class="ea-admin-block-wrapper">
 
-                <h2 class="UA-admin-section-header-title">
+                <h2 class="ea-admin-section-header-title">
                     <span class="left">
                         <i class="fas fa-cogs"></i> <?php _e('Dashboard', 'useful-addons-elementor'); ?>
                     </span>
                 </h2>
-                <div class="UA-admin-dashboard-card">
-<!--                    <img src="--><?php //echo EASY_ADDONS_DIR_URL . '/assets/admin/images/UA-dashboard-banner.jpg'; ?><!--" alt="easy-addons-for-elementor">-->
+                <div class="ea-admin-dashboard-card">
+                    <h1>The <span>Easy Addons</span> <br>For <span>Elementor</span> Page Builder</h1>
                 </div>
 
             </div><!--admin block-wrapper end-->

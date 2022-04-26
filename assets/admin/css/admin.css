@@ -65,7 +65,8 @@
 .ea-header-bar .ea-admin-logo-inline {
     width: 130px;
     padding: 5px 15px 5px 0;
-    margin-right: 25px;
+    border-right: 1px solid #ddd;
+    margin-right: 12px;
 }
 .ea-header-bar .ea-admin-logo-inline img {
     width: 100%;
@@ -87,22 +88,29 @@
     display: flex;
     justify-content: flex-end;
 }
-.UA-settings-tabs {
+.ea-admin-logo-inline h1 {
+    font-size: 22px;
+}
+.ea-admin-logo-inline span {
+    color: #8f42ec;
+    font-weight: 400;
+}
+.ea-settings-tabs {
     padding-top: 20px;
     display: flex;
     align-items: flex-start;
 }
-.UA-settings-tabs .col-lg-8 {
+.ea-settings-tabs .col-lg-8 {
     width: 80%;
 }
-.UA-settings-tabs .col-lg-4 {
+.ea-settings-tabs .col-lg-4 {
     width: 20%;
 }
 @media screen and (max-width: 782px) {
-    .UA-settings-tabs .col-lg-4 {
+    .ea-settings-tabs .col-lg-4 {
         width: 30%;
     }
-    .UA-settings-tabs .col-lg-8 {
+    .ea-settings-tabs .col-lg-8 {
         width: 70%;
     }
 }
@@ -117,32 +125,32 @@
     line-height: 20px;
 }
 
-.UA-settings-tabs ul {
+.ea-settings-tabs ul {
     width: 100%;
     margin: 0;
     height: 500px;
     overflow-x: hidden;
 }
 
-.UA-settings-tabs ul li {
+.ea-settings-tabs ul li {
     display: block;
     margin-bottom: 5px;
 }
-.UA-settings-tabs ul li.UA-go-pro-nav-tab a {
+.ea-settings-tabs ul li.UA-go-pro-nav-tab a {
     background: linear-gradient(45deg, #ba42ec, #8f42ec, #0073aa, #ba42ec, #8f42ec) ;
     animation: gradient_bg_animation 15s ease infinite ;
     background-size: 400% 400%;
 }
-.UA-settings-tabs ul li.UA-go-pro-nav-tab a span {
+.ea-settings-tabs ul li.UA-go-pro-nav-tab a span {
     color: #ffffff;
     letter-spacing: 0.4px;
     font-weight: 500;
 }
-.UA-settings-tabs ul li.UA-go-pro-nav-tab a i {
+.ea-settings-tabs ul li.UA-go-pro-nav-tab a i {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.11);
 }
-.UA-settings-tabs ul li a {
+.ea-settings-tabs ul li a {
     padding: 10px 20px 10px 10px;
     font-size: 15px;
     background: #f7f7f7;
@@ -156,12 +164,12 @@
     position: relative;
 }
 @media screen and (max-width: 782px) {
-    .UA-settings-tabs ul li a span {
+    .ea-settings-tabs ul li a span {
         display: block;
         margin-top: 5px;
     }
 }
-.UA-settings-tabs ul li a:before {
+.ea-settings-tabs ul li a:before {
     content: '';
     border-left: 25px solid #f5eefc;
     position: absolute;
@@ -172,21 +180,21 @@
     top: 20px;
     display: none;
 }
-.UA-settings-tabs ul li a img {
+.ea-settings-tabs ul li a img {
     opacity: 0.6;
 }
-.UA-settings-tabs ul li a.active:before {
+.ea-settings-tabs ul li a.active:before {
     display: block;
 }
-.UA-settings-tabs ul li a.active img {
+.ea-settings-tabs ul li a.active img {
     opacity: 1;
 }
 
-.UA-settings-tabs ul li a:focus {
+.ea-settings-tabs ul li a:focus {
     outline: none;
     box-shadow: none;
 }
-.UA-settings-tabs ul li a i {
+.ea-settings-tabs ul li a i {
     display: inline-block;
     margin-right: 15px;
     background: rgba(145, 63, 229, 0.1);
@@ -201,7 +209,7 @@
     font-size: 20px;
     border-radius: 4px;
 }
-.UA-settings-tabs ul li a img {
+.ea-settings-tabs ul li a img {
     width: 18px;
     margin: 0 15px -3px 0;
 }
@@ -212,13 +220,13 @@
     position: relative;
     border-radius: 10px;
 }
-.UA-settings-tabs ul li.ui-tabs-active a {
+.ea-settings-tabs ul li.ui-tabs-active a {
     background: #fff;
     outline: none;
     box-shadow: none;
     color: #343434;
 }
-p.UA-title {
+p.ea-title {
     font-size: 14px;
     font-weight: 500;
     color: #2e3d62;
@@ -264,13 +272,13 @@ textarea.UA-form-control {
 
 
 /* Checkbox Style */
-.UA-checkbox-container {
+.ea-checkbox-container {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
 }
 
-.UA-checkbox {
+.ea-checkbox {
     font-size: 25px;
     margin: 10px;
     padding: 15px;
@@ -286,25 +294,25 @@ textarea.UA-form-control {
     align-items: center;
 }
 
-.UA-checkbox.checkbox-toggle-all {
+.ea-checkbox.checkbox-toggle-all {
     border-radius: 100px;
     padding: 12px 25px;
     flex-basis: 270px;
     box-shadow: none;
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
-.UA-checkbox input[type="checkbox"] {
+.ea-checkbox input[type="checkbox"] {
     visibility: hidden;
     display: none;
 }
-.UA-checkbox label {
+.ea-checkbox label {
     width: 2em;
     height: 1em;
     position: relative;
     cursor: pointer;
     display: block;
 }
-.UA-checkbox > label:before {
+.ea-checkbox > label:before {
     content: "";
     position: absolute;
     width: 1.5em;
@@ -313,7 +321,7 @@ textarea.UA-form-control {
     transition: background 0.1s 0.1s ease;
     border: 2px solid rgba(143, 67, 236, 0.4);
 }
-.UA-checkbox > label:after {
+.ea-checkbox > label:after {
     content: "";
     position: absolute;
     width: 18px;
@@ -326,11 +334,11 @@ textarea.UA-form-control {
     background: #ffffff;
     z-index: 2;
 }
-.UA-checkbox input[type="checkbox"]:checked + label::before {
+.ea-checkbox input[type="checkbox"]:checked + label::before {
     background: #8f43ec;
     border: 2px solid #8f43ec;
 }
-.UA-checkbox input[type="checkbox"]:checked + label::after {
+.ea-checkbox input[type="checkbox"]:checked + label::after {
     left: 31px;
     background: #8f43ec;
     -webkit-box-shadow: 0 0 0 5px #ffffff inset;
@@ -346,7 +354,7 @@ textarea.UA-form-control {
     justify-content: flex-start;
     align-items: flex-start;
 }
-.UA-select-box .UA-elements-info .UA-title {
+.UA-select-box .ea-elements-info .ea-title {
     margin-bottom: 10px;
 }
 .UA-select-box .UA-custom-select .select-box {
@@ -388,8 +396,8 @@ textarea.UA-form-control {
     flex-direction: column;
     align-items: flex-start;
 }
-.UA-textarea-box .UA-elements-info .UA-title,
-.UA-text-field .UA-elements-info .UA-title {
+.UA-textarea-box .ea-elements-info .ea-title,
+.UA-text-field .ea-elements-info .ea-title {
     margin-bottom: 10px;
 }
 .UA-textarea-box .UA-textarea,
@@ -438,8 +446,8 @@ textarea.UA-form-control {
 
 
 /* UA Tab Toggles */
-#elements .UA-admin-section-header-title,
-#extensions .UA-admin-section-header-title {
+#elements .ea-admin-section-header-title,
+#extensions .ea-admin-section-header-title {
     width: auto;
 }
 .UA-settings-tab {
@@ -448,11 +456,11 @@ textarea.UA-form-control {
 .UA-settings-tab.active {
     display: block;
 }
-.UA-tabs li a.active {
+.ea-tabs li a.active {
     background-color: #fff;
     color: #724fb6;
 }
-.UA-tabs li a.active span {
+.ea-tabs li a.active span {
     background: linear-gradient(45deg, #8f42ec 50%, #ba42ec 50%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -509,17 +517,17 @@ textarea.UA-form-control {
     box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
 }
 
-.UA-save-btn-wrap {
+.ea-save-btn-wrap {
     margin: 30px 0 20px;
 }
 
-.UA-save-btn-wrap .ea-admin-save-btn {
+.ea-save-btn-wrap .ea-admin-save-btn {
     background-color: #ba42ec;
     color: #fff;
     padding: 10px 20px;
 }
-.UA-save-btn-wrap .ea-admin-save-btn:hover,
-.UA-save-btn-wrap .ea-admin-save-btn:focus {
+.ea-save-btn-wrap .ea-admin-save-btn:hover,
+.ea-save-btn-wrap .ea-admin-save-btn:focus {
     background-color: #ba42ec;
     color: #fff;
 }
@@ -637,7 +645,7 @@ textarea.UA-form-control {
 
 /* Header Button */
 .ea-header-bar .ea-admin-save-btn,
-.UA-save-btn-wrap .ea-admin-save-btn {
+.ea-save-btn-wrap .ea-admin-save-btn {
     border-radius: 30px;
     background: #8f42ec;
     height: 50px;
@@ -651,12 +659,12 @@ textarea.UA-form-control {
     -moz-box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
     box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
 }
-.UA-save-btn-wrap .ea-admin-save-btn.save-now,
+.ea-save-btn-wrap .ea-admin-save-btn.save-now,
 .ea-header-bar .ea-admin-save-btn.save-now,
 .UA-fb-feed-btn.save-now {
     background: #e74c3c;
 }
-.UA-save-btn-wrap .ea-admin-save-btn.save-now:hover,
+.ea-save-btn-wrap .ea-admin-save-btn.save-now:hover,
 .ea-header-bar .ea-admin-save-btn.save-now:hover,
 .UA-fb-feed-btn.save-now:hover {
     background: #ff5544;
@@ -682,23 +690,23 @@ textarea.UA-form-control {
 }
 
 /* Admin Blocks */
-.UA-admin-general-wrapper {
+.ea-admin-general-wrapper {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
 }
-.UA-admin-general-wrapper .UA-admin-general-inner {
+.ea-admin-general-wrapper .ea-admin-general-inner {
     flex: 1 1 100%;
     max-width: 100em;
     height: auto;
     width: 100%;
 }
-.UA-admin-general-wrapper .UA-sidebar {
+.ea-admin-general-wrapper .UA-sidebar {
     flex: 1 1 200px;
     padding: 20px;
 }
-.UA-admin-section-header-title {
+.ea-admin-section-header-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -714,14 +722,14 @@ textarea.UA-form-control {
     overflow: hidden;
 }
 @media screen and (max-width: 782px) {
-    .UA-admin-section-header-title {
+    .ea-admin-section-header-title {
         flex-direction: column;
     }
-    .UA-admin-section-header-title .left {
+    .ea-admin-section-header-title .left {
         margin-bottom: 10px;
     }
 }
-.UA-admin-section-header-title:before {
+.ea-admin-section-header-title:before {
     content: '';
     position: absolute;
     width: 100%;
@@ -731,7 +739,7 @@ textarea.UA-form-control {
     left: 0;
     animation: gradient_bg_animation 10s ease infinite;
 }
-.UA-admin-section-header-title i:after {
+.ea-admin-section-header-title i:after {
     content: '';
     position: absolute;
     left: 0;
@@ -741,7 +749,7 @@ textarea.UA-form-control {
     background: rgba(186, 66, 236, 0.1);
     z-index: -1;
 }
-.UA-admin-section-header-title i {
+.ea-admin-section-header-title i {
     overflow: hidden;
     display: inline-block;
     width: 40px;
@@ -757,23 +765,34 @@ textarea.UA-form-control {
     margin-right: 10px;
     position: relative;
 }
-.UA-admin-section-header-title .left {
+.ea-admin-section-header-title .left {
     display: flex;
     align-items: center;
 }
-.UA-admin-dashboard-card {
+.ea-admin-dashboard-card {
     position: relative;
-}
-.UA-admin-dashboard-card img {
+    height: 450px;
+    background: linear-gradient(45deg, #8e41eb 37%, #d0aaff);
     width: 100%;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.UA-admin-block-wrapper {
+.ea-admin-dashboard-card h1 span {
+    color: #e3e3e3;
+}
+.ea-admin-dashboard-card h1 {
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+.ea-admin-block-wrapper {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
 }
-.UA-admin-block-wrapper .UA-admin-block {
+.ea-admin-block-wrapper .UA-admin-block {
     background-color: #ffffff;
     box-shadow: 0 8px 38px 0 rgba(16, 16, 16, 0.07);
     margin: 10px 10px 25px 10px;
@@ -792,7 +811,7 @@ textarea.UA-form-control {
     padding: 1em;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
-.UA-admin-block-wrapper .UA-admin-block.UA-admin-block-banner {
+.ea-admin-block-wrapper .UA-admin-block.UA-admin-block-banner {
     padding: 8px;
 }
 .UA-admin-block-header {
@@ -826,10 +845,10 @@ textarea.UA-form-control {
 .UA-notice-text {
     padding-left: 10px;
 }
-.UA-title {
+.ea-title {
     position: relative;
 }
-label.UA-get-pro + .UA-title {
+label.UA-get-pro + .ea-title {
     padding-left: 25px;
 }
 #toplevel_page_ua_settings a {
@@ -858,20 +877,20 @@ label.UA-get-pro + .UA-title {
     text-align: center;
     margin-bottom: 22px;
 }
-.UA-checkbox-container.elements-global-control-wrap
-    .UA-checkbox.checkbox-toggle-all {
+.ea-checkbox-container.elements-global-control-wrap
+    .ea-checkbox.checkbox-toggle-all {
     display: inline-block;
     margin: 0 auto;
 }
-.UA-checkbox-container.elements-global-control-wrap  .UA-checkbox label:after {
+.ea-checkbox-container.elements-global-control-wrap  .ea-checkbox label:after {
     width: 1.8em;
     height: 1.8em;
 }
-.UA-checkbox-container.elements-global-control-wrap .UA-checkbox input[type="checkbox"]:checked + label::after {
+.ea-checkbox-container.elements-global-control-wrap .ea-checkbox input[type="checkbox"]:checked + label::after {
     left: 2.2em;
 }
-.UA-checkbox-container.elements-global-control-wrap .UA-checkbox label,
-.UA-checkbox-container.elements-global-control-wrap .UA-checkbox label:before {
+.ea-checkbox-container.elements-global-control-wrap .ea-checkbox label,
+.ea-checkbox-container.elements-global-control-wrap .ea-checkbox label:before {
     width: 100px;
     height: 2em;
 }
@@ -924,14 +943,14 @@ button.ea-admin-save-btn.UA-global-control-disable:hover {
     -moz-box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
     box-shadow: 0 12px 24px -6px rgba(143, 66, 236, 0.2);
 }
-.UA-elements-info {
+.ea-elements-info {
     display: flex;
     align-items: center;
 }
-.UA-elements-info img, .UA-elements-info svg {
+.ea-elements-info img, .ea-elements-info svg {
     width: 18px;
 }
-.UA-elements-info .UA-info-tooltip {
+.ea-elements-info .UA-info-tooltip {
     background-color: #3a3c40;
     display: block;
     position: absolute;
@@ -950,13 +969,13 @@ button.ea-admin-save-btn.UA-global-control-disable:hover {
     transition: all 0.3s ease;
     z-index: 1;
 }
-.UA-elements-info > a:hover .UA-info-tooltip {
+.ea-elements-info > a:hover .UA-info-tooltip {
     visibility: visible;
     opacity: 1;
     -webkit-transform: translate(-50%, -150%);
           transform: translate(-50%, -150%);
 }
-.UA-elements-info .UA-info-tooltip:after {
+.ea-elements-info .UA-info-tooltip:after {
     display: block;
     position: absolute;
     bottom: 1px;

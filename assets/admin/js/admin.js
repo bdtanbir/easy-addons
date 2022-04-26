@@ -4,13 +4,13 @@
     /**
      * UA Tabs
      */
-    $(".UA-tabs li.UA-tab-list a").on("click", function(e) {
+    $(".ea-tabs li.ea-tab-list a").on("click", function(e) {
         e.preventDefault();
-        $(".UA-tabs li a").removeClass("active");
+        $(".ea-tabs li a").removeClass("active");
         $(this).addClass("active");
         var tab = $(this).attr("href");
         $(".UA-settings-tab").removeClass("active");
-        $(".UA-settings-tabs")
+        $(".ea-settings-tabs")
             .find(tab)
             .addClass("active");
     });
@@ -19,7 +19,7 @@
     $(document).on("click", ".UA-global-control-enable", function(e) {
         e.preventDefault();
 
-        $(".UA-checkbox-container .UA-checkbox input:enabled").each(
+        $(".ea-checkbox-container .ea-checkbox input:enabled").each(
             function(i) {
                 $(this)
                     .prop("checked", true)
@@ -32,7 +32,7 @@
     $(document).on("click", ".UA-global-control-disable", function(e) {
         e.preventDefault();
 
-        $(".UA-checkbox-container .UA-checkbox input:enabled").each(
+        $(".ea-checkbox-container .ea-checkbox input:enabled").each(
             function(i) {
                 $(this)
                     .prop("checked", false)
@@ -44,8 +44,8 @@
 
     // Save Button reacting on any changes
     var headerSaveBtn = $( '.ea-header-bar .ea-admin-save-btn' );
-    var footerSaveBtn = $( '.UA-save-btn-wrap .ea-admin-save-btn' );
-    $('.UA-checkbox input[type="checkbox"], .UA-global-control-enable, .UA-global-control-disable').on( 'click', function( e ) {
+    var footerSaveBtn = $( '.ea-save-btn-wrap .ea-admin-save-btn' );
+    $('.ea-checkbox input[type="checkbox"], .UA-global-control-enable, .UA-global-control-disable').on( 'click', function( e ) {
         headerSaveBtn.addClass( 'save-now' );
         footerSaveBtn.addClass( 'save-now' );
         headerSaveBtn.removeAttr('disabled').css('cursor', 'pointer');

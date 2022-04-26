@@ -72,12 +72,12 @@ class ea_admin_menu_setting_class {
      * Enqueue UA Admin Scripts Files
      * */
 	public function ea_enqueue_admin_scripts(){
-//		wp_register_style(
-//			'ea-fontawesome-min-css',
-//			'//pro.fontawesome.com/releases/v5.10.0/css/all.css',
-//			false,
-//			EASY_ADDONS_VERSION
-//		);
+		wp_register_style(
+			'ea-fontawesome-min-css',
+			'//pro.fontawesome.com/releases/v5.10.0/css/all.css',
+			false,
+			EASY_ADDONS_VERSION
+		);
 		wp_enqueue_style(
 			'ea-animate-css',
 			EASY_ADDONS_ASSETS . 'css/animate.css',
@@ -125,7 +125,7 @@ class ea_admin_menu_setting_class {
 
 
 
-//		wp_enqueue_style( 'ea-fontawesome-min-css' );
+		wp_enqueue_style( 'ea-fontawesome-min-css' );
 		wp_enqueue_style( 'sweetalert2-min-css' );
 		wp_enqueue_style( 'ea-global-css-admin' );
 		wp_enqueue_style( 'ea-admin-settings-css' );
@@ -163,7 +163,7 @@ class ea_admin_menu_setting_class {
                 <div class="ea-header-bar">
                     <div class="ea-header-left">
                         <div class="ea-admin-logo-inline">
-<!--                            <img src="--><?php //echo EASY_ADDONS_ASSETS . '/admin/images/ea-logo.png'; ?><!--" alt="--><?php //esc_attr_e('Easy Addons For Elementor', 'easy-addons'); ?><!--">-->
+                            <h1>Easy<span>Addons</span></h1>
                         </div>
                         <h2 class="title">
 				            <?php esc_html_e('Easy Addons Settings', 'easy-addons'); ?>
@@ -175,16 +175,16 @@ class ea_admin_menu_setting_class {
                         </button>
                     </div>
                 </div>
-                <div class="UA-settings-tabs">
+                <div class="ea-settings-tabs">
                     <div class="col-lg-4">
-                        <ul class="UA-tabs">
-                            <li class="UA-tab-list">
+                        <ul class="ea-tabs">
+                            <li class="ea-tab-list">
                                 <a href="#dashboard" class="active">
                                     <i class="fas fa-cogs"></i>
                                     <span><?php esc_html_e('Dashboard', 'easy-addons'); ?></span>
                                 </a>
                             </li>
-                            <li class="UA-tab-list">
+                            <li class="ea-tab-list">
                                 <a href="#elements">
                                     <i class="fas fa-cubes"></i>
                                     <span><?php esc_html_e('Elements', 'easy-addons'); ?></span>
