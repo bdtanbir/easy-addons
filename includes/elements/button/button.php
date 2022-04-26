@@ -62,6 +62,17 @@ class ea_default_button extends Widget_Base {
                 'default'      => 'no',
             ]
         );
+        $this->add_control('ea_button_icon_position',
+            [
+                'label'   => __( 'Icon Position', 'easy-addons' ),
+                'type'    => Controls_Manager::SELECT,
+                'default' => 'left',
+                'options' => [
+                    'left'  => __( 'Left', 'easy-addons' ),
+                    'right' => __( 'Right', 'easy-addons' )
+                ]
+            ]
+        );
         $this->add_control('ea_button_icon',
             [
                 'label'            => __( 'Button Icon', 'easy-addons' ),
@@ -577,10 +588,18 @@ class ea_default_button extends Widget_Base {
 
         <a href="<?php echo esc_url($settings['ea_button_url']['url']) ?>" <?php echo $target . ' ' . $nofollow; ?> class="ea-button transition-all-3s">
             <?php
-            if ($settings['ea_button_icon_show'] == 'yes') {
-                Icons_Manager::render_icon($settings['ea_button_icon'], ['class' => 'ea-button-icon', ' aria-hidden' => 'true']);
+            if($settings['ea_button_icon_position'] == 'left') {
+                if ($settings['ea_button_icon_show'] == 'yes') {
+                    Icons_Manager::render_icon($settings['ea_button_icon'], ['class' => 'ea-button-icon', ' aria-hidden' => 'true']);
+                }
+                echo esc_html($settings['button_text']);
+            } else {
+                echo esc_html($settings['button_text']);
+                if ($settings['ea_button_icon_show'] == 'yes') {
+                    Icons_Manager::render_icon($settings['ea_button_icon'], ['class' => 'ea-button-icon', ' aria-hidden' => 'true']);
+                }
             }
-            echo esc_html($settings['button_text']); ?>
+            ?>
         </a>
 
     <?php }

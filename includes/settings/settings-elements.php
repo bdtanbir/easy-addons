@@ -39,6 +39,15 @@
                     <input type="checkbox" id="button" name="button" <?php checked( 1, $this->ea_elementor_get_settings['button'], true ); ?>>
                     <label for="button"></label>
                 </div>
+                <div class="UA-checkbox">
+                    <div class="UA-elements-info">
+                        <p class="UA-title">
+							<?php esc_html_e('Flip Card', 'easy-addons'); ?>
+                        </p>
+                    </div>
+                    <input type="checkbox" id="flip-card" name="flip-card" <?php checked( 1, $this->ea_elementor_get_settings['flip-card'], true ); ?>>
+                    <label for="flip-card"></label>
+                </div>
             </div>
 
             <div class="UA-save-btn-wrap">

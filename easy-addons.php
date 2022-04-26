@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Easy Addons
  * Plugin URI:
- * Description: <a href="">Easy Addons for Elementor</a> Is the Best Elementor Addons Comes With 20+ Free Elementor Widgets Including Testimonial, Slider, Image Grid, etc & Features Like Elementor Equal Height, Text Stroke, Shape Dividers, Floating Effect, Grid Layout & More.
+ * Description: <a href="">Easy Addons for Elementor</a> Is the Best Elementor Addons. Including Button and Flip Card. More is coming soon.
  * Version: 1.0
  * Author: Tanbir Ahmod
  * Author URI:
@@ -34,7 +34,8 @@ require_once EASY_ADDONS_DIR_PATH . 'includes/enqueue.php';
  */
 function ea_elementor_activated_modules() {
     $ea_elementor_default_keys = [
-        'button'
+        'button',
+        'flip-card'
     ];
 
     $ea_elementor_default_settings  = array_fill_keys( $ea_elementor_default_keys, true );
