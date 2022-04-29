@@ -529,7 +529,41 @@ class ea_flip_card extends Widget_Base {
         );
         $this->end_controls_tab();
 		$this->end_controls_tabs();
-		$this->end_controls_section();
+        /*Front-Box*/
+        $this->add_control('flip_box_front_heading',
+            [
+                'label'     => esc_html__( 'Front - Box', 'easy-addons' ),
+                'type'      => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_group_control(Group_Control_Background::get_type(),
+            [
+                'name' => 'flip_box_front_box_bg',
+                'label' => esc_html__( 'Background', 'easy-addons' ),
+                'types' => [ 'classic', 'gradient', 'video' ],
+                'selector' => '{{WRAPPER}} .ea-flip-card-item .front',
+            ]
+        );
+
+        /*Back-Box*/
+        $this->add_control('flip_box_back_heading',
+            [
+                'label'     => esc_html__( 'Back - Box', 'easy-addons' ),
+                'type'      => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_group_control(Group_Control_Background::get_type(),
+            [
+                'name' => 'flip_box_back_box_bg',
+                'label' => esc_html__( 'Background', 'easy-addons' ),
+                'types' => [ 'classic', 'gradient', 'video' ],
+                'selector' => '{{WRAPPER}} .ea-flip-card-item .back',
+            ]
+        );
+
+        $this->end_controls_section();
 	}
 
 
