@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 
 class ea_default_button extends Widget_Base {
     public function get_name() {
-        return 'button';
+        return 'ea-button';
     }
 
     public function get_title() {
@@ -572,7 +572,7 @@ class ea_default_button extends Widget_Base {
         $this->end_controls_section();
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->ea_button_content();
         $this->ea_button_style();
         $this->ea_button_icon_style();

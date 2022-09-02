@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 
 class ea_flip_card extends Widget_Base {
 	public function get_name() {
-		return 'flip-card';
+		return 'ea-flip-card';
 	}
 
 	public function get_title() {
@@ -567,7 +567,7 @@ class ea_flip_card extends Widget_Base {
 	}
 
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->flip_card_front_content();
 		$this->flip_card_back_content();
 		$this->flip_card_front_title_style();
