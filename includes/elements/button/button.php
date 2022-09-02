@@ -607,4 +607,4 @@ class ea_default_button extends Widget_Base {
 }
 
 
-Plugin::instance()->widgets_manager->register_widget_type( new ea_default_button() );
+Plugin::instance()->widgets_manager->register( new ea_default_button() );

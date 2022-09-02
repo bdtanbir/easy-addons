@@ -675,7 +675,7 @@ textarea.UA-form-control {
     justify-content: flex-end;
     align-items: center;
 }
-.ea-header-bar .ea-admin-save-btn svg#UA-spinner {
+.ea-admin-save-btn svg#ea-spinner {
     animation: rotating 2s infinite linear;
     margin: 0 8px 0 0;
     left: 14px;    

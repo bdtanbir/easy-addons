@@ -629,4 +629,4 @@ class ea_flip_card extends Widget_Base {
 	}
 
 }
-Plugin::instance()->widgets_manager->register_widget_type( new ea_flip_card() );
+Plugin::instance()->widgets_manager->register( new ea_flip_card() );

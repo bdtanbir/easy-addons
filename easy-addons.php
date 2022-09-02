@@ -1,16 +1,14 @@
 <?php
 /**
  * Plugin Name: Easy Addons
- * Plugin URI:
- * Description: <a href="">Easy Addons for Elementor</a> Is the Best Elementor Addons. Including Button and Flip Card. More is coming soon.
+ * Plugin URI: https://github.com/bdtanbir/easy-addons
+ * Description: Easy Addons for Elementor Is the Best Elementor Addons. Including Button and Flip Card. More is coming soon.
  * Version: 1.0
  * Author: Tanbir Ahmod
- * Author URI:
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: easy-addons
  * Domain Path: /languages/
- *
  */
 
 
