@@ -5,14 +5,14 @@
 
                 <h2 class="ea-admin-section-header-title">
                     <span class="left">
-                        <i class="fas fa-cogs"></i> <?php _e('Dashboard', 'useful-addons-elementor'); ?>
+                        <i class="fas fa-cogs"></i> <?php esc_html_e('Dashboard', 'useful-addons-elementor'); ?>
                     </span>
                 </h2>
                 <div class="ea-admin-dashboard-card">
-                    <h1>The <span>Easy Addons</span> <br>For <span>Elementor</span> Page Builder</h1>
+                    <h1><?php esc_html_e('The', 'easy-addons'); ?> <span><?php esc_html_e('Easy Addons', 'easy-addons'); ?></span> <br><?php esc_html_e('For', 'easy-addons'); ?> <span><?php esc_html_e('Elementor', 'easy-addons'); ?></span> <?php esc_html_e('Page Builder', 'easy-addons'); ?></h1>
                 </div>
 
-            </div><!--admin block-wrapper end-->
+            </div>
         </div>
-    </div><!--Row end-->
+    </div>
 </div>

@@ -57,8 +57,8 @@ class ea_admin_menu_setting_class {
 	public function create_ea_elementor_admin_menu() {
 
 		add_menu_page(
-			'EasyAddons',
-			'EasyAddons',
+			__('EasyAddons', 'easy-addons'),
+			__('EasyAddons', 'easy-addons'),
 			'manage_options',
 			'ea_settings',
 			array( $this, 'ea_elementor_admin_settings_page' ),
@@ -72,23 +72,18 @@ class ea_admin_menu_setting_class {
      * Enqueue UA Admin Scripts Files
      * */
 	public function ea_enqueue_admin_scripts(){
+		
 		wp_register_style(
-			'ea-fontawesome-min-css',
-			'//pro.fontawesome.com/releases/v5.10.0/css/all.css',
-			false,
-			EASY_ADDONS_VERSION
+			'fontawesome-min-css',
+			'//pro.fontawesome.com/releases/v5.10.0/css/all.css'
 		);
 		wp_enqueue_style(
 			'ea-animate-css',
-			EASY_ADDONS_ASSETS . 'css/animate.css',
-			false,
-			EASY_ADDONS_VERSION
+			EASY_ADDONS_ASSETS . 'css/animate.css'
 		);
 		wp_register_style(
 			'ea-admin-settings-css',
-			EASY_ADDONS_ASSETS. 'admin/css/admin.css',
-			false,
-			EASY_ADDONS_VERSION
+			EASY_ADDONS_ASSETS. 'admin/css/admin.css'
 		);
 		wp_register_style(
 			'sweetalert2-min-css',
@@ -112,20 +107,20 @@ class ea_admin_menu_setting_class {
 			'sweetalert2-core-js',
 			EASY_ADDONS_ASSETS.( 'admin/vendor/sweetalert2/js/core.js' ),
 			array('jquery'),
-			'1.0',
+			EASY_ADDONS_VERSION,
 			true
 		);
 		wp_register_script(
 			'sweetalert2-min-js',
 			EASY_ADDONS_ASSETS.( 'admin/vendor/sweetalert2/js/sweetalert2.min.js' ),
 			array('jquery', 'sweetalert2-core-js'),
-			'1.0',
+			EASY_ADDONS_VERSION,
 			true
 		);
 
 
 
-		wp_enqueue_style( 'ea-fontawesome-min-css' );
+		wp_enqueue_style( 'fontawesome-min-css' );
 		wp_enqueue_style( 'sweetalert2-min-css' );
 		wp_enqueue_style( 'ea-global-css-admin' );
 		wp_enqueue_style( 'ea-admin-settings-css' );
@@ -163,7 +158,7 @@ class ea_admin_menu_setting_class {
                 <div class="ea-header-bar">
                     <div class="ea-header-left">
                         <div class="ea-admin-logo-inline">
-                            <h1>Easy<span>Addons</span></h1>
+                            <h1><?php esc_html_e('Easy', 'easy-addons'); ?><span><?php esc_html_e('Addons', 'easy-addons'); ?></span></h1>
                         </div>
                         <h2 class="title">
 				            <?php esc_html_e('Easy Addons Settings', 'easy-addons'); ?>
@@ -213,7 +208,7 @@ class ea_admin_menu_setting_class {
 	public function ea_save_settings_with_ajax() {
 
 		if( isset( $_POST['fields'] ) ) {
-			parse_str( $_POST['fields'], $settings );
+			parse_str( sanitize_text_field($_POST['fields']), $settings );
 		} else {
 			return;
 		}

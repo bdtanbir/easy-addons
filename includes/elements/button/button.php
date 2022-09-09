@@ -68,8 +68,12 @@ class ea_default_button extends Widget_Base {
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'left',
                 'options' => [
+                    'none'  => __( 'None', 'easy-addons' ),
                     'left'  => __( 'Left', 'easy-addons' ),
                     'right' => __( 'Right', 'easy-addons' )
+                ],
+                'condition' => [
+                    'ea_button_icon_show' => 'yes'
                 ]
             ]
         );
@@ -115,6 +119,7 @@ class ea_default_button extends Widget_Base {
                 ],
                 'condition' => [
                     'ea_button_icon_show' => 'yes',
+                    'ea_button_icon_position' => ['left', 'right'],
                 ]
             ]
         );
@@ -586,7 +591,7 @@ class ea_default_button extends Widget_Base {
         $nofollow = $settings['ea_button_url']['nofollow'] ? ' rel="nofollow"' : '';
         ?>
 
-        <a href="<?php echo esc_url($settings['ea_button_url']['url']) ?>" <?php echo $target . ' ' . $nofollow; ?> class="ea-button transition-all-3s">
+        <a href="<?php echo esc_url($settings['ea_button_url']['url']) ?>" <?php echo esc_attr($target . ' ' . $nofollow); ?> class="ea-button transition-all-3s">
             <?php
             if($settings['ea_button_icon_position'] == 'left') {
                 if ($settings['ea_button_icon_show'] == 'yes') {
