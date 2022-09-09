@@ -17,10 +17,9 @@ EasyAddons for Elementor page builder Is One of the Best Elementor Addons That C
 
 == Screenshots ==
 
-1. Review widget with image offset
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 
 * Initial release
