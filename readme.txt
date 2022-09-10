@@ -16,7 +16,7 @@ EasyAddons for Elementor page builder Is One of the Best Elementor Addons That C
 
 
 == Screenshots ==
-
+1. Elements Dashboard
 
 == Changelog ==
 
