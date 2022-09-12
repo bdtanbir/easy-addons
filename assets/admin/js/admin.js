@@ -9,14 +9,14 @@
         $(".ea-tabs li a").removeClass("active");
         $(this).addClass("active");
         var tab = $(this).attr("href");
-        $(".UA-settings-tab").removeClass("active");
+        $(".ea-settings-tab").removeClass("active");
         $(".ea-settings-tabs")
             .find(tab)
             .addClass("active");
     });
 
     // Elements global control
-    $(document).on("click", ".UA-global-control-enable", function(e) {
+    $(document).on("click", ".ea-global-control-enable", function(e) {
         e.preventDefault();
 
         $(".ea-checkbox-container .ea-checkbox input:enabled").each(
@@ -29,7 +29,7 @@
 
     });
 
-    $(document).on("click", ".UA-global-control-disable", function(e) {
+    $(document).on("click", ".ea-global-control-disable", function(e) {
         e.preventDefault();
 
         $(".ea-checkbox-container .ea-checkbox input:enabled").each(
@@ -45,7 +45,7 @@
     // Save Button reacting on any changes
     var headerSaveBtn = $( '.ea-header-bar .ea-admin-save-btn' );
     var footerSaveBtn = $( '.ea-save-btn-wrap .ea-admin-save-btn' );
-    $('.ea-checkbox input[type="checkbox"], .UA-global-control-enable, .UA-global-control-disable').on( 'click', function( e ) {
+    $('.ea-checkbox input[type="checkbox"], .ea-global-control-enable, .ea-global-control-disable').on( 'click', function( e ) {
         headerSaveBtn.addClass( 'save-now' );
         footerSaveBtn.addClass( 'save-now' );
         headerSaveBtn.removeAttr('disabled').css('cursor', 'pointer');
@@ -53,7 +53,7 @@
     } );
 
     // Saving Data With Ajax Request
-    $( '.js-UA-settings-save' ).on( 'click', function(event) {
+    $( '.js-ea-settings-save' ).on( 'click', function(event) {
         event.preventDefault();
 
         var _this = $(this);
@@ -93,5 +93,13 @@
             $(this).attr('disabled', 'true').css('cursor', 'not-allowed');
         }
     } );
+
+    // EA Modal
+    $(document).on('click', '.ea-checkbox.disabled', function() {
+        $('.ea-modal-wrapper').addClass('active');
+    })
+    $(document).on('click', '.ea-modal-wrapper .ea-modal .ea-close-modal', function() {
+        $('.ea-modal-wrapper').removeClass('active');
+    })
 
 })(jQuery);

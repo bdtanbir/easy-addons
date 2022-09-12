@@ -12,7 +12,7 @@ class ea_admin_menu_setting_class {
 	 * @var array
 	 * @since 2.3.0
 	 */
-	public $ea_elementor_default_keys = [ 'button', 'flip-card' ];
+	public $ea_elementor_default_keys = [ 'button', 'flip-card', 'ea-toggle' ];
 
 	/**
 	 * Will Contain All Components Default Values
@@ -73,44 +73,55 @@ class ea_admin_menu_setting_class {
      * */
 	public function ea_enqueue_admin_scripts(){
 		
-		wp_register_style(
+		wp_enqueue_style(
 			'fontawesome-min-css',
 			'//pro.fontawesome.com/releases/v5.10.0/css/all.css'
+		);
+		wp_enqueue_style(
+			'bootstrap-min-css',
+			EASY_ADDONS_ASSETS . 'frontend/css/bootstrap.min.css'
 		);
 		wp_enqueue_style(
 			'ea-animate-css',
 			EASY_ADDONS_ASSETS . 'css/animate.css'
 		);
-		wp_register_style(
+		wp_enqueue_style(
 			'ea-admin-settings-css',
 			EASY_ADDONS_ASSETS. 'admin/css/admin.css'
 		);
-		wp_register_style(
+		wp_enqueue_style(
 			'sweetalert2-min-css',
 			EASY_ADDONS_ASSETS . 'admin/vendor/sweetalert2/css/sweetalert2.min.css'
 		);
-		wp_register_style(
+		wp_enqueue_style(
 			'ea-global-css-admin',
 			EASY_ADDONS_ASSETS . 'css/admin-global.css'
 		);
 
 
-		wp_register_script(
+		wp_enqueue_script(
 			'ea-admin-settings-js',
 			EASY_ADDONS_ASSETS . 'admin/js/admin.js',
 			array('jquery'),
 			EASY_ADDONS_VERSION,
 			true
 		);
+		wp_enqueue_script(
+			'bootstrap-min-js',
+			EASY_ADDONS_ASSETS . 'frontend/css/index.min.js',
+			array('jquery'),
+			EASY_ADDONS_VERSION,
+			true
+		);
 
-		wp_register_script(
+		wp_enqueue_script(
 			'sweetalert2-core-js',
 			EASY_ADDONS_ASSETS.( 'admin/vendor/sweetalert2/js/core.js' ),
 			array('jquery'),
 			EASY_ADDONS_VERSION,
 			true
 		);
-		wp_register_script(
+		wp_enqueue_script(
 			'sweetalert2-min-js',
 			EASY_ADDONS_ASSETS.( 'admin/vendor/sweetalert2/js/sweetalert2.min.js' ),
 			array('jquery', 'sweetalert2-core-js'),
@@ -118,15 +129,6 @@ class ea_admin_menu_setting_class {
 			true
 		);
 
-
-
-		wp_enqueue_style( 'fontawesome-min-css' );
-		wp_enqueue_style( 'sweetalert2-min-css' );
-		wp_enqueue_style( 'ea-global-css-admin' );
-		wp_enqueue_style( 'ea-admin-settings-css' );
-		wp_enqueue_script( 'ea-admin-settings-js' );
-		wp_enqueue_script( 'sweetalert2-core-js' );
-		wp_enqueue_script( 'sweetalert2-min-js' );
 	}
 
 	/**
@@ -165,7 +167,7 @@ class ea_admin_menu_setting_class {
                         </h2>
                     </div>
                     <div class="ea-header-right">
-                        <button type="submit" class="button ea-admin-save-btn js-UA-settings-save">
+                        <button type="submit" class="button ea-admin-save-btn js-ea-settings-save">
                             <i class="fas fa-save"></i> <?php esc_html_e('Save settings', 'easy-addons'); ?>
                         </button>
                     </div>

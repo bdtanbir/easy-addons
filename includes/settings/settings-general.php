@@ -1,4 +1,4 @@
-<div id="dashboard" class="UA-settings-tab active">
+<div id="dashboard" class="ea-settings-tab active">
     <div class="row ea-admin-general-wrapper">
         <div class="ea-admin-general-inner">
             <div class="ea-admin-block-wrapper">

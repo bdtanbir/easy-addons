@@ -33,7 +33,8 @@ require_once EASY_ADDONS_DIR_PATH . 'includes/enqueue.php';
 function ea_elementor_activated_modules() {
     $ea_elementor_default_keys = [
         'button',
-        'flip-card'
+        'flip-card',
+        'ea-toggle'
     ];
 
     $ea_elementor_default_settings  = array_fill_keys( $ea_elementor_default_keys, true );
