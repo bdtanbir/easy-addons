@@ -1,10 +1,10 @@
 === EasyAddons - For Elementor page Builder ===
 Contributors: devtanbir
-Tags: addons, elementor addons, usefuladdons, elementor
+Tags: addons, elementor addons, usefuladdons, elementor, easy addons, easy-addons, easyaddons
 Requires at least: 5.0
 Tested up to: 6.0.2
 Requires PHP: 5.7
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,10 @@ EasyAddons for Elementor page builder Is One of the Best Elementor Addons That C
 1. Elements Dashboard
 
 == Changelog ==
+
+= 1.0.1 =
+
+Added: Flip Card hover styles
 
 = 1.0.0 =
 

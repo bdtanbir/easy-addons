@@ -3,8 +3,9 @@
  * Plugin Name: Easy Addons
  * Plugin URI: https://github.com/bdtanbir/easy-addons
  * Description: Easy Addons for Elementor Is the Best Elementor Addons. Including Button and Flip Card. More is coming soon.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Tanbir Ahmod
+ * Author URI: https://github.com/bdtanbir
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: easy-addons
@@ -14,7 +15,7 @@
 
 defined('ABSPATH') || die();
 
-define('EASY_ADDONS_VERSION', '1.0.0');
+define('EASY_ADDONS_VERSION', '1.0.1');
 define('EASY_ADDONS__FILE__', __FILE__);
 define('EASY_ADDONS_DIR_PATH', plugin_dir_path(EASY_ADDONS__FILE__));
 define('EASY_ADDONS_DIR_URL', plugin_dir_url(EASY_ADDONS__FILE__));
@@ -28,7 +29,6 @@ require_once EASY_ADDONS_DIR_PATH . 'includes/enqueue.php';
 
 /**
  * This function will return true for all activated modules
- * @since   v1.0.0
  */
 function ea_elementor_activated_modules() {
     $ea_elementor_default_keys = [
@@ -50,7 +50,6 @@ function ea_elementor_activated_modules() {
 
 /**
  * Activate or Deactivate Modules
- * @since v1.0.0
  */
 require_once EASY_ADDONS_DIR_PATH . 'includes/widgets-register.php';
 
