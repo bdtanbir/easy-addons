@@ -438,7 +438,7 @@ class ea_flip_card extends Widget_Base {
 		);
 		$this->add_responsive_control( 'flip_card_box_width',
 			[
-				'label'      => __( 'Height', 'easy-addons' ),
+				'label'      => __( 'Width', 'easy-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
