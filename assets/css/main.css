@@ -1,4 +1,4 @@
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 
 
 :root {
@@ -93,22 +93,39 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-.ea-flip-card-item .front {
-    background-color: #f09b00;
-    color: black;
+.ea-flip-card-item .back .inner,
+.ea-flip-card-item .front .inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
+}
+.ea-flip-card-item .back,
+.ea-flip-card-item .front {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.ea-flip-card-item .back:before,
+.ea-flip-card-item .front:before {
+    content: '';
+    background-color: #f09b00;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.ea-flip-card-item .front {
+    color: black;
+}
+.ea-flip-card-item .back:before {
+    background-color: #555555;
 }
 .ea-flip-card-item .back {
-    background-color: #555555;
     color: white;
     transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 .ea-flip-card-item .back h3,
 .ea-flip-card-item .front h3 {
@@ -120,3 +137,81 @@ body {
     line-height: 24px;
     font-size: 16px;
 }
+
+/* style 2 */
+.ea-flip-card-item.style-3,
+.ea-flip-card-item.style-2 {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.ea-flip-card-item.style-3 .ea-flip-card-inner,
+.ea-flip-card-item.style-2 .ea-flip-card-inner {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.ea-flip-card-item.style-3 .ea-flip-card-inner .front,
+.ea-flip-card-item.style-3 .ea-flip-card-inner .back,
+.ea-flip-card-item.style-2 .ea-flip-card-inner .front,
+.ea-flip-card-item.style-2 .ea-flip-card-inner .back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.ea-flip-card-item.style-3 .ea-flip-card-inner .front,
+.ea-flip-card-item.style-3 .ea-flip-card-inner .back,
+.ea-flip-card-item.style-2 .ea-flip-card-inner .front,
+.ea-flip-card-item.style-2 .ea-flip-card-inner .back {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+.ea-flip-card-item.style-3 .ea-flip-card-inner .front .inner,
+.ea-flip-card-item.style-3 .ea-flip-card-inner .back .inner,
+.ea-flip-card-item.style-2 .ea-flip-card-inner .front .inner,
+.ea-flip-card-item.style-2 .ea-flip-card-inner .back .inner {
+    -webkit-transform: translateZ(90px) scale(.91);
+    transform: translateZ(90px) scale(.91);
+}
+.ea-flip-card-item.style-3 .ea-flip-card-inner .back,
+.ea-flip-card-item.style-2 .ea-flip-card-inner .back {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+.ea-flip-card-item.style-3:hover .ea-flip-card-inner,
+.ea-flip-card-item.style-3:hover .ea-flip-card-inner .back,
+.ea-flip-card-item.style-2:hover .ea-flip-card-inner,
+.ea-flip-card-item.style-2:hover .ea-flip-card-inner .back {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+/* Style 3 */
+.ea-flip-card-item.style-3:hover .ea-flip-card-inner, 
+.ea-flip-card-item.style-3:hover .ea-flip-card-inner .back {
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
+
+.ea-flip-card-item.style-3 .ea-flip-card-inner .back {
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
+

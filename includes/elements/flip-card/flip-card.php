@@ -123,6 +123,30 @@ class ea_flip_card extends Widget_Base {
         );
 		$this->end_controls_section();
 	}
+
+	private function flip_card_options() {
+		$this->start_controls_section( 'flip_card_options',
+			[
+				'label' => __( 'Options', 'easy-addons' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			]
+		);
+        $this->add_control(
+			'flip_card_style',
+			[
+				'label'      => esc_html__( 'Hover Style', 'easy-addons' ),
+				'type'       => Controls_Manager::SELECT,
+				'default'    => 'style-1',
+				'options'    => [
+					'style-1'  => esc_html__( 'Style 1', 'easy-addons' ),
+					'style-2' => esc_html__( '3D Style 1', 'easy-addons' ),
+					'style-3' => esc_html__( '3D Style 2', 'easy-addons' )
+				],
+			]
+		);
+
+        $this->end_controls_section();
+    }
 	private function flip_card_front_title_style() {
 		$this->start_controls_section( 'flip_card_front_title_style',
 			[
@@ -215,35 +239,6 @@ class ea_flip_card extends Widget_Base {
 		);
 		$this->end_controls_section();
 	}
-    private function flip_card_front_img_style()
-    {
-        $this->start_controls_section('flip_card_front_img_style',
-            [
-                'label' => __('Front - Image', 'easy-addons'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-        $this->add_responsive_control('flip_card_front_img_opacity',
-            [
-                'type' => Controls_Manager::SLIDER,
-                'label' => esc_html__( 'Opacity', 'easy-addons' ),
-                'range' => [
-                    'px' => [
-                        'min'  => 0,
-                        'max'  => 1,
-                        'step' => 0.1
-                    ],
-                ],
-                'default' => [
-                    'size' => 0.4
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .ea-flip-card-item .front img' => 'opacity: {{SIZE}};',
-                ],
-            ]
-        );
-        $this->end_controls_section();
-    }
 
 
     private function flip_card_back_title_style() {
@@ -368,6 +363,72 @@ class ea_flip_card extends Widget_Base {
         $this->end_controls_section();
     }
 
+    private function flip_card_bg_overlay()
+    {
+        $this->start_controls_section('flip_card_bg_overlay',
+            [
+                'label' => __('Background Overlay', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->add_responsive_control('flip_card_front_bg_opacity',
+            [
+                'type' => Controls_Manager::SLIDER,
+                'label' => esc_html__( 'Background Opacity', 'easy-addons' ),
+                'range' => [
+                    'px' => [
+                        'min'  => 0,
+                        'max'  => 1,
+                        'step' => 0.1
+                    ],
+                ],
+                'default' => [
+                    'size' => 0.4
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-flip-card-item .back:before' => 'opacity: {{SIZE}};',
+                    '{{WRAPPER}} .ea-flip-card-item .front:before' => 'opacity: {{SIZE}};',
+                ],
+            ]
+        );
+
+        
+        /*Front-Box*/
+        $this->add_control('flip_box_front_heading',
+            [
+                'label'     => esc_html__( 'Front - Background', 'easy-addons' ),
+                'type'      => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_group_control(Group_Control_Background::get_type(),
+            [
+                'name' => 'flip_box_front_box_bg',
+                'label' => esc_html__( 'Background', 'easy-addons' ),
+                'types' => [ 'classic', 'gradient' ],
+                'selector' => '{{WRAPPER}} .ea-flip-card-item .front:before',
+            ]
+        );
+
+        /*Back-Box*/
+        $this->add_control('flip_box_back_heading',
+            [
+                'label'     => esc_html__( 'Back - Background', 'easy-addons' ),
+                'type'      => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_group_control(Group_Control_Background::get_type(),
+            [
+                'name' => 'flip_box_back_box_bg',
+                'label' => esc_html__( 'Background', 'easy-addons' ),
+                'types' => [ 'classic', 'gradient' ],
+                'selector' => '{{WRAPPER}} .ea-flip-card-item .back:before',
+            ]
+        );
+        $this->end_controls_section();
+    }
+
 	private function flip_card_box_style() {
 		$this->start_controls_section( 'flip_card_box_style',
 			[
@@ -455,6 +516,8 @@ class ea_flip_card extends Widget_Base {
 					'{{WRAPPER}} .ea-flip-card-item .ea-flip-card-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .ea-flip-card-item .ea-flip-card-inner .back' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .ea-flip-card-item .ea-flip-card-inner .front' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .ea-flip-card-item .back:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .ea-flip-card-item .front:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -503,6 +566,8 @@ class ea_flip_card extends Widget_Base {
                     '{{WRAPPER}} .ea-flip-card-item .ea-flip-card-inner:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .ea-flip-card-item  .ea-flip-card-inner:hover .back' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .ea-flip-card-item  .ea-flip-card-inner:hover .front' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ea-flip-card-item .front:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ea-flip-card-item .back:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -529,39 +594,6 @@ class ea_flip_card extends Widget_Base {
         );
         $this->end_controls_tab();
 		$this->end_controls_tabs();
-        /*Front-Box*/
-        $this->add_control('flip_box_front_heading',
-            [
-                'label'     => esc_html__( 'Front - Box', 'easy-addons' ),
-                'type'      => Controls_Manager::HEADING,
-                'separator' => 'before',
-            ]
-        );
-        $this->add_group_control(Group_Control_Background::get_type(),
-            [
-                'name' => 'flip_box_front_box_bg',
-                'label' => esc_html__( 'Background', 'easy-addons' ),
-                'types' => [ 'classic', 'gradient', 'video' ],
-                'selector' => '{{WRAPPER}} .ea-flip-card-item .front',
-            ]
-        );
-
-        /*Back-Box*/
-        $this->add_control('flip_box_back_heading',
-            [
-                'label'     => esc_html__( 'Back - Box', 'easy-addons' ),
-                'type'      => Controls_Manager::HEADING,
-                'separator' => 'before',
-            ]
-        );
-        $this->add_group_control(Group_Control_Background::get_type(),
-            [
-                'name' => 'flip_box_back_box_bg',
-                'label' => esc_html__( 'Background', 'easy-addons' ),
-                'types' => [ 'classic', 'gradient', 'video' ],
-                'selector' => '{{WRAPPER}} .ea-flip-card-item .back',
-            ]
-        );
 
         $this->end_controls_section();
 	}
@@ -570,13 +602,17 @@ class ea_flip_card extends Widget_Base {
 	protected function register_controls() {
 		$this->flip_card_front_content();
 		$this->flip_card_back_content();
+
+        $this->flip_card_options();
+
 		$this->flip_card_front_title_style();
 		$this->flip_card_front_stitle_style();
-        $this->flip_card_front_img_style();
 
         $this->flip_card_back_title_style();
         $this->flip_card_back_stitle_style();
         $this->flip_card_back_img_style();
+
+        $this->flip_card_bg_overlay();
 
 		$this->flip_card_box_style();
 
@@ -588,39 +624,37 @@ class ea_flip_card extends Widget_Base {
 
 
 		?>
-        <div class="ea-flip-card-item">
+        <div class="ea-flip-card-item <?php echo esc_attr($settings['flip_card_style']); ?>">
             <div class="ea-flip-card-inner">
-                <div class="front">
-                    <?php if($settings['flip_card_front_image_show'] === 'yes') { ?>
-                        <img src="<?php echo esc_url($settings['flip_card_front_image']['url']); ?>" alt="<?php esc_attr_e('Flip Image', 'easy-addons'); ?>">
-                    <?php } ?>
-                    <div class="ua-flip-card-content text-center position-absolute d-flex align-items-center justify-content-center flex-wrap flex-column">
-                        <?php if(!empty($settings['flip_card_front_title'])) { ?>
-                            <h3 class="transition-all-3s">
-                                <?php echo esc_html($settings['flip_card_front_title']); ?>
-                            </h3>
-                        <?php } if(!empty($settings['flip_card_front_stitle'])) { ?>
-                            <p class="transition-all-3s">
-                                <?php echo esc_html($settings['flip_card_front_stitle']); ?>
-                            </p>
-                        <?php } ?>
+                <div class="front" style="background-image: url(<?php echo esc_url($settings['flip_card_front_image']['url']); ?>)">
+                    <div class="inner">
+                        <div class="ua-flip-card-content text-center position-absolute d-flex align-items-center justify-content-center flex-wrap flex-column">
+                            <?php if(!empty($settings['flip_card_front_title'])) { ?>
+                                <h3 class="transition-all-3s">
+                                    <?php echo esc_html($settings['flip_card_front_title']); ?>
+                                </h3>
+                            <?php } if(!empty($settings['flip_card_front_stitle'])) { ?>
+                                <p class="transition-all-3s">
+                                    <?php echo esc_html($settings['flip_card_front_stitle']); ?>
+                                </p>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
 
-                <div class="back">
-                    <?php if($settings['flip_card_back_image_show'] === 'yes') { ?>
-                        <img src="<?php echo esc_url($settings['flip_card_back_image']['url']); ?>" alt="<?php esc_attr_e('Flip Image', 'easy-addons'); ?>">
-                    <?php } ?>
-                    <div class="ua-flip-card-content text-center position-absolute d-flex align-items-center justify-content-center flex-wrap flex-column">
-                        <?php if(!empty($settings['flip_card_back_title'])) { ?>
-                            <h3 class="transition-all-3s">
-                                <?php echo esc_html($settings['flip_card_back_title']); ?>
-                            </h3>
-                        <?php } if(!empty($settings['flip_card_back_stitle'])) { ?>
-                            <p class="transition-all-3s">
-                                <?php echo esc_html($settings['flip_card_back_stitle']); ?>
-                            </p>
-                        <?php } ?>
+                <div class="back" style="background-image: url(<?php echo esc_url($settings['flip_card_back_image']['url']); ?>)">
+                    <div class="inner">
+                        <div class="ua-flip-card-content text-center position-absolute d-flex align-items-center justify-content-center flex-wrap flex-column">
+                            <?php if(!empty($settings['flip_card_back_title'])) { ?>
+                                <h3 class="transition-all-3s">
+                                    <?php echo esc_html($settings['flip_card_back_title']); ?>
+                                </h3>
+                            <?php } if(!empty($settings['flip_card_back_stitle'])) { ?>
+                                <p class="transition-all-3s">
+                                    <?php echo esc_html($settings['flip_card_back_stitle']); ?>
+                                </p>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
