@@ -49,6 +49,15 @@
                         <input type="checkbox" id="flip-card" name="flip-card" <?php checked( 1, $this->ea_elementor_get_settings['flip-card'], true ); ?>>
                         <label for="flip-card"></label>
                     </div>
+                    <div class="ea-checkbox">
+                        <div class="ea-elements-info">
+                            <p class="ea-title">
+                                <?php esc_html_e('Team', 'easy-addons'); ?>
+                            </p>
+                        </div>
+                        <input type="checkbox" id="team" name="team" <?php checked( 1, $this->ea_elementor_get_settings['team'], true ); ?>>
+                        <label for="team"></label>
+                    </div>
                     <?php 
                         $disabled = !defined('EASY_ADDONS_PRO') ? 'disabled' : '';
                     ?>

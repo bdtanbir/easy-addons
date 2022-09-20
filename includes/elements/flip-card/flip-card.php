@@ -343,7 +343,7 @@ class ea_flip_card extends Widget_Base {
         );
         $this->add_responsive_control('flip_card_back_img_opacity',
             [
-                'type' => Controls_Manager::SLIDER,
+                'type'  => Controls_Manager::SLIDER,
                 'label' => esc_html__( 'Opacity', 'easy-addons' ),
                 'range' => [
                     'px' => [
@@ -352,7 +352,7 @@ class ea_flip_card extends Widget_Base {
                         'step' => 0.1
                     ],
                 ],
-                'default' => [
+                'default'  => [
                     'size' => 0.4
                 ],
                 'selectors' => [

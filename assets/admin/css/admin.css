@@ -273,9 +273,10 @@ textarea.UA-form-control {
 
 /* Checkbox Style */
 .ea-checkbox-container {
-    display: flex;
     flex-flow: row wrap;
     align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .ea-checkbox {

@@ -22,6 +22,9 @@ class eaProWidgetsRegister {
         if( $is_component_active['flip-card'] ) {
             require_once EASY_ADDONS_DIR_PATH . 'includes/elements/flip-card/flip-card.php';
         }
+        if( $is_component_active['team'] ) {
+            require_once EASY_ADDONS_DIR_PATH . 'includes/elements/team/team.php';
+        }
     
         do_action('ea_register_elements', $is_component_active);
     }

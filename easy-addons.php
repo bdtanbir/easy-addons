@@ -34,6 +34,7 @@ function ea_elementor_activated_modules() {
     $ea_elementor_default_keys = [
         'button',
         'flip-card',
+        'team',
         'ea-toggle'
     ];
 
