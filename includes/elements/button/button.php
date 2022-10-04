@@ -239,7 +239,7 @@ class ea_default_button extends Widget_Base {
                         ],
                     ],
                     'color' => [
-                        'default' => '#F66B5D',
+                        'default' => '#8f42ec',
                     ],
                 ],
             ]

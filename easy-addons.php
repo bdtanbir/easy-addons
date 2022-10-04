@@ -35,6 +35,7 @@ function ea_elementor_activated_modules() {
         'button',
         'flip-card',
         'team',
+        'ea-timeline',
         'ea-toggle'
     ];
 

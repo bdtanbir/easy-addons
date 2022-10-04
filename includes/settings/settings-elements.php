@@ -82,6 +82,23 @@
                 </div>
             </div>
 
+            <div class="ea-checkbox-wrap">
+                <h4>
+                    <?php esc_html_e('Dynamic Elements', 'easy-addons'); ?>
+                </h4>
+                <div class="ea-checkbox-container">
+                    <div class="ea-checkbox">
+                        <div class="ea-elements-info">
+                            <p class="ea-title">
+                                <?php esc_html_e('Timeline', 'easy-addons'); ?>
+                            </p>
+                        </div>
+                        <input type="checkbox" id="ea-timeline" name="ea-timeline" <?php checked( 1, $this->ea_elementor_get_settings['ea-timeline'], true ); ?>>
+                        <label for="ea-timeline"></label>
+                    </div>
+                </div>
+            </div>
+
             <div class="ea-save-btn-wrap">
                 <button type="submit" class="button ea-admin-save-btn js-ea-settings-save">
                     <i class="fas fa-save"></i> <?php esc_html_e('Save settings', 'easy-addons'); ?>

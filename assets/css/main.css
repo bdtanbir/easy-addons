@@ -2,7 +2,8 @@
 
 
 :root {
-    --primary_color: #F66B5D;
+    /*--primary_color: #F66B5D;*/
+    --primary_color: #8f42ec;
     --secondary_color: #233d63;
     --white_color: #ffffff;
 }
@@ -14,10 +15,14 @@ a:focus {
     box-shadow: none;
     text-decoration: none !important;
 }
+.w-half {
+    width: 50%;
+}
 body {
     font-size: 15px;
     line-height: 25px;
     font-family: "Barlow",sans-serif;
+    color: #6c727c;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -49,6 +54,9 @@ body {
     justify-content: center;
     font-size: 16px;
     background: var(--primary_color);
+    color: #fff;
+    padding: 10px 20px;
+    transition: .3s;
 }
 .ea-button:hover {
     background: #fff;
@@ -353,3 +361,152 @@ body {
     opacity: 1;
     visibility: visible;
 }
+
+
+/*===== EA Timeline =====*/
+.ea-timeline {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 45px;
+    row-gap: 30px;
+}
+.ea-timeline-container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+.ea-timeline .el-timeline-column .el-timeline-inner {
+    /* margin: 0 25px; */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+    padding: 30px;
+    transition: .3s;
+}
+.ea-timeline .el-timeline-column .el-timeline-inner:before {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    transform: rotate(45deg);
+    border-radius: 0 3px 0 0;
+    transition: .3s;
+}
+.ea-timeline .el-timeline-column:nth-child(even) .el-timeline-inner:before {
+    left: -8px;
+    top: auto;
+    bottom: 20px;
+    right: auto;
+    border-right: none;
+    border-top: none;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-radius: 0 0 0 3px;
+}
+.ea-timeline .el-timeline-column:nth-child(odd):before {
+    content: '';
+    width: 2px;
+    height: calc(100% + 40px);
+    position: absolute;
+    background: #f0e3ff;
+    right: -23px;
+    top: 25px;
+}
+.ea-timeline .el-timeline-column:nth-last-child(1)::before,
+.ea-timeline .el-timeline-column:nth-last-child(2)::before {
+    height: calc(100% - 45px);
+}
+.ea-timeline .el-timeline-column:nth-last-child(1)::before {
+    display: none;
+}
+.ea-timeline .el-timeline-column:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    right: -32px;
+    top: 18px;
+    background: #ffffff;
+    border: 3px solid #f0e3ff;
+    transition: .3s;
+}
+.ea-timeline .el-timeline-column:nth-child(even):after {
+    right: auto;
+    left: -33px;
+    top: auto;
+    bottom: 18px;
+}
+.ea-timeline .el-timeline-column .el-timeline-content time {
+    position: absolute;
+    background: var(--primary_color);
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    right: -69px;
+    z-index: 2;
+    top: 45px;
+    box-shadow: 0 0 10px rgb(143 66 236 / 33%);
+    transition: .3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.ea-timeline .el-timeline-column .el-timeline-content time:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: inherit;
+    position: absolute;
+    top: -2px;
+    transform: rotate(45deg);
+    left: 50%;
+    margin-left: -3px;
+}
+.ea-timeline .el-timeline-column:nth-child(even) .el-timeline-content time {
+    right: auto;
+    left: -69px;
+    top: auto;
+    bottom: -15px;
+}
+.ea-timeline .el-timeline-column:hover .el-timeline-inner .el-timeline-content time {
+    opacity: 1;
+    visibility: visible;
+}
+.ea-timeline .el-timeline-column:hover:after {
+    background: var(--primary_color);
+}
+.ea-timeline .el-timeline-column:hover .el-timeline-inner {
+    border-color: var(--primary_color);
+    box-shadow: 0 0 30px rgb(0 0 0 / 8%);
+}
+.ea-timeline .el-timeline-column:hover .el-timeline-inner:before {
+    border-color: var(--primary_color);
+}
+.ea-timeline .el-timeline-inner .el-timeline-content h2 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    line-height: 28px;
+}
+.ea-timeline .el-timeline-inner .el-timeline-content p {
+    font-size: 15px;
+    color: #6c727c;
+    margin-bottom: 15px;
+}
+.ea-timeline .el-timeline-inner .el-timeline-content .ea-button {
+    border-radius: 4px;
+    padding: 7px 18px;
+    border: 1px solid var(--primary_color);
+    font-weight: 500;
+    font-size: 15px;
+}
+.ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover {
+    color: var(--primary_color);
+}
+
+

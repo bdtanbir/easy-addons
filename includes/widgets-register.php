@@ -25,6 +25,9 @@ class eaProWidgetsRegister {
         if( $is_component_active['team'] ) {
             require_once EASY_ADDONS_DIR_PATH . 'includes/elements/team/team.php';
         }
+        if( $is_component_active['ea-timeline'] ) {
+            require_once EASY_ADDONS_DIR_PATH . 'includes/elements/timeline/timeline.php';
+        }
     
         do_action('ea_register_elements', $is_component_active);
     }
