@@ -16,7 +16,7 @@ function ea_enqueue_assets() {
     );
     
     wp_enqueue_style(
-        'theme-main-css',
+        'ea-main-css',
         EASY_ADDONS_DIR_URL.'assets/css/main.css'
     );
 

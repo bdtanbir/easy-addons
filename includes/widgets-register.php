@@ -16,13 +16,13 @@ class eaProWidgetsRegister {
         $is_component_active = ea_elementor_activated_modules();
     
         // load elements
-        if( $is_component_active['button'] ) {
+        if( $is_component_active['ea-button'] ) {
             require_once EASY_ADDONS_DIR_PATH . 'includes/elements/button/button.php';
         }
-        if( $is_component_active['flip-card'] ) {
+        if( $is_component_active['ea-flip-card'] ) {
             require_once EASY_ADDONS_DIR_PATH . 'includes/elements/flip-card/flip-card.php';
         }
-        if( $is_component_active['team'] ) {
+        if( $is_component_active['ea-team'] ) {
             require_once EASY_ADDONS_DIR_PATH . 'includes/elements/team/team.php';
         }
     

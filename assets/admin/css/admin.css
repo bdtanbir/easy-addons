@@ -1147,6 +1147,18 @@ button.ea-admin-save-btn.ea-global-control-disable:hover {
 
 
 
+.toplevel_page_ea_settings a .wp-menu-image img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    transition: .2s;
+}
+.current.toplevel_page_ea_settings a:hover .wp-menu-image img,
+.toplevel_page_ea_settings a:hover .wp-menu-image img {
+    opacity: 1;
+}
+
+
 
 
 

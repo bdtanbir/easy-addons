@@ -37,8 +37,8 @@
                                 <?php esc_html_e('Creative Button', 'easy-addons'); ?>
                             </p>
                         </div>
-                        <input type="checkbox" id="button" name="button" <?php checked( 1, $this->ea_elementor_get_settings['button'], true ); ?>>
-                        <label for="button"></label>
+                        <input type="checkbox" id="ea-button" name="ea-button" <?php checked( 1, $this->ea_elementor_get_settings['ea-button'], true ); ?>>
+                        <label for="ea-button"></label>
                     </div>
                     <div class="ea-checkbox">
                         <div class="ea-elements-info">
@@ -46,8 +46,8 @@
                                 <?php esc_html_e('Flip Card', 'easy-addons'); ?>
                             </p>
                         </div>
-                        <input type="checkbox" id="flip-card" name="flip-card" <?php checked( 1, $this->ea_elementor_get_settings['flip-card'], true ); ?>>
-                        <label for="flip-card"></label>
+                        <input type="checkbox" id="ea-flip-card" name="ea-flip-card" <?php checked( 1, $this->ea_elementor_get_settings['ea-flip-card'], true ); ?>>
+                        <label for="ea-flip-card"></label>
                     </div>
                     <div class="ea-checkbox">
                         <div class="ea-elements-info">
@@ -55,10 +55,9 @@
                                 <?php esc_html_e('Team', 'easy-addons'); ?>
                             </p>
                         </div>
-                        <input type="checkbox" id="team" name="team" <?php checked( 1, $this->ea_elementor_get_settings['team'], true ); ?>>
-                        <label for="team"></label>
+                        <input type="checkbox" id="ea-team" name="ea-team" <?php checked( 1, $this->ea_elementor_get_settings['ea-team'], true ); ?>>
+                        <label for="ea-team"></label>
                     </div>
-                    
                     
                 </div>
             </div>

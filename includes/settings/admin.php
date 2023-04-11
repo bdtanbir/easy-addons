@@ -7,40 +7,14 @@ if( ! defined( 'ABSPATH' ) ) exit(); // Exit if accessed directly
 
 class ea_admin_menu_setting_class {
 
-	/**
-	 * Contains Default Component keys
-	 * @var array
-	 * @since 2.3.0
-	 */
-	public $ea_elementor_default_keys = [ 'button', 'flip-card', 'team' ];
+	public $ea_elementor_default_keys = [ 'ea-button', 'ea-flip-card', 'ea-team' ];
 
-	/**
-	 * Will Contain All Components Default Values
-	 * @var array
-	 * @since 2.3.0
-	 */
 	private $ea_elementor_default_settings;
 
-	/**
-	 * Will Contain User End Settings Value
-	 * @var array
-	 * @since 2.3.0
-	 */
 	private $ea_elementor_settings;
 
-	/**
-	 * Will Contains Settings Values Fetched From DB
-	 * @var array
-	 * @since 2.3.0
-	 */
 	private $ea_elementor_get_settings;
 
-	/**
-	 * Initializing all default hooks and functions
-	 * @param
-	 * @return void
-	 * @since 1.1.2
-	 */
 	public function __construct() {
 
 		add_action( 'admin_menu', array( $this, 'create_ea_elementor_admin_menu' ), 5 );
