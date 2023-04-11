@@ -3,19 +3,19 @@
  * Plugin Name: Easy Addons
  * Plugin URI: https://github.com/bdtanbir/easy-addons
  * Description: Easy Addons for Elementor Is the Best Elementor Addons. Including Button, Flip Card and Team Member. More is coming soon.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: Tanbir Ahmod
  * Author URI: https://github.com/bdtanbir
- * License: GPLv2
+ * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: easy-addons
- * Domain Path: /languages/
+ * Domain Path: /languages
  */
 
 
 defined('ABSPATH') || die();
 
-define('EASY_ADDONS_VERSION', '2.0.0');
+define('EASY_ADDONS_VERSION', '2.0.1');
 define('EASY_ADDONS__FILE__', __FILE__);
 define('EASY_ADDONS_DIR_PATH', plugin_dir_path(EASY_ADDONS__FILE__));
 define('EASY_ADDONS_DIR_URL', plugin_dir_url(EASY_ADDONS__FILE__));
