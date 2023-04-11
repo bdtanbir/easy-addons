@@ -58,44 +58,8 @@
                         <input type="checkbox" id="team" name="team" <?php checked( 1, $this->ea_elementor_get_settings['team'], true ); ?>>
                         <label for="team"></label>
                     </div>
-                    <?php 
-                        $disabled = !defined('EASY_ADDONS_PRO') ? 'disabled' : '';
-                    ?>
-                    <div class="ea-checkbox <?php esc_attr_e($disabled); ?>">
-                        <div class="ea-elements-info">
-                            <p class="ea-title">
-                                <?php esc_html_e('Toggle', 'easy-addons'); ?>
-                            </p>
-                        </div>
-                        <?php if(defined('EASY_ADDONS_PRO')) { ?>
-                            <input 
-                                type="checkbox" id="ea-toggle" name="ea-toggle" 
-                                <?php checked( 1, $this->ea_elementor_get_settings['ea-toggle'], true ); ?>>
-                        <?php } else { ?> 
-                            <input 
-                                type="checkbox" id="ea-toggle" name="ea-toggle" 
-                                <?php esc_attr_e($disabled); ?>>
-                        <?php } ?>
-                            <label for="ea-toggle"></label>
-                    </div>
                     
-                </div>
-            </div>
-
-            <div class="ea-checkbox-wrap">
-                <h4>
-                    <?php esc_html_e('Dynamic Elements', 'easy-addons'); ?>
-                </h4>
-                <div class="ea-checkbox-container">
-                    <div class="ea-checkbox">
-                        <div class="ea-elements-info">
-                            <p class="ea-title">
-                                <?php esc_html_e('Timeline', 'easy-addons'); ?>
-                            </p>
-                        </div>
-                        <input type="checkbox" id="ea-timeline" name="ea-timeline" <?php checked( 1, $this->ea_elementor_get_settings['ea-timeline'], true ); ?>>
-                        <label for="ea-timeline"></label>
-                    </div>
+                    
                 </div>
             </div>
 

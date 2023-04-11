@@ -12,7 +12,7 @@ class ea_admin_menu_setting_class {
 	 * @var array
 	 * @since 2.3.0
 	 */
-	public $ea_elementor_default_keys = [ 'button', 'flip-card', 'team', 'ea-timeline', 'ea-toggle' ];
+	public $ea_elementor_default_keys = [ 'button', 'flip-card', 'team' ];
 
 	/**
 	 * Will Contain All Components Default Values
