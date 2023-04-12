@@ -370,8 +370,85 @@ class eaTimeline extends Widget_Base {
             [
                 'label'     => __( 'Background', 'easy-addons' ),
                 'type'      => Controls_Manager::COLOR,
+                'default'   => '#8f42ec',
                 'selectors' => [
                     '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Border::get_type(),
+            [
+                'name'     => 'button_border',
+                'label'    => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button',
+                'fields_options'  => [
+                    'border'      => [
+                        'default' => 'solid',
+                    ],
+                    'width'       => [
+                        'default' => [
+                            'top'      => '1',
+                            'right'    => '1',
+                            'bottom'   => '1',
+                            'left'     => '1',
+                            'isLinked' => true,
+                        ],
+                    ],
+                    'color' => [
+                        'default' => '#8f42ec',
+                    ],
+                ],
+            ]
+        );
+        $this->add_responsive_control('button_radius',
+            [
+                'label'      => __( 'Border Radius', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'top'      => '4',
+                    'right'    => '4',
+                    'bottom'   => '4',
+                    'left'     => '4',
+                    'isLinked' => true,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Box_Shadow::get_type(),
+            [
+                'name'     => 'button_shadow',
+                'label'    => __( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button'
+            ]
+        );
+        $this->add_responsive_control( 'button_padding',
+            [
+                'label'      => __( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'top'    => '7',
+                    'right'  => '18',
+                    'bottom' => '7',
+                    'left'   => '18',
+                    'unit'   => 'px',
+                    'isLinked' => false,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'button_margin',
+            [
+                'label'      => __( 'Margin', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -392,11 +469,377 @@ class eaTimeline extends Widget_Base {
                 ],
             ]
         );
+        $this->add_control('button_bg_hover',
+            [
+                'label'     => __( 'Background', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Border::get_type(),
+            [
+                'name'     => 'button_border_hover',
+                'label'    => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover',
+            ]
+        );
+        $this->add_responsive_control('button_radius_hv',
+            [
+                'label'      => __( 'Border Radius', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Box_Shadow::get_type(),
+            [
+                'name'     => 'button_shadow_hover',
+                'label'    => __( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover'
+            ]
+        );
+        $this->add_responsive_control( 'button_padding_hover',
+            [
+                'label'      => __( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control( 'button_margin_hover',
+            [
+                'label'      => __( 'Margin', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
         $this->end_controls_tab();
         $this->end_controls_tabs();
         /* end tab */
 
+        $this->end_controls_section();
+    }
+    private function getDateStyle()
+    {
+        $this->start_controls_section('getDateStyle', [
+            'label' => __('Date', 'easy-addons'),
+            'tab'   => Controls_Manager::TAB_STYLE,
+        ]);
+        $this->add_group_control(Group_Control_Typography::get_type(),
+            [
+                'name'     => 'date_typography',
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-content time',
+            ]
+        );
+        $this->add_control('date_color',
+            [
+                'label'     => esc_html__( 'Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-content time' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_control('date_bg',
+            [
+                'label'     => esc_html__( 'Background', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#8f42ec',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-content time' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Box_Shadow::get_type(),
+            [
+                'name'     => 'date_shadow',
+                'label'    => __( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-content time',
+                'fields_options' => [
+                    'box_shadow_type' => [
+                        'default'     =>'yes'
+                    ],
+                    'box_shadow'  => [
+                        'default' => [
+                            'horizontal' => 0,
+                            'vertical'   => 0,
+                            'blur'       => 10,
+                            'spread'     => 0,
+                            'color'      => 'rgb(143 66 236 / 33%)'
+                        ]
+                    ]
+                ],
+            ]
+        );
+        $this->add_responsive_control('date_padding',
+            [
+                'label'      => esc_html__( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'top'    => '3',
+                    'right'  => '8',
+                    'bottom' => '3',
+                    'left'   => '8',
+                    'unit'   => 'px',
+                    'isLinked' => false
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-content time' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
+        $this->end_controls_section();
+    }
+    private function getShapeStyle()
+    {
+        $this->start_controls_section('getShapeStyle', [
+            'label' => __('Shape Circle/Line', 'easy-addons'),
+            'tab'   => Controls_Manager::TAB_STYLE,
+        ]);
+
+        $this->add_control('circle_more_option',
+            [
+                'label'     => esc_html__( 'Circle', 'easy-addons' ),
+                'type'      => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_control('circle_bg',
+            [
+                'label'     => esc_html__( 'Background', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:after' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_control('circle_bg_hover',
+            [
+                'label'     => esc_html__( 'Background Hover', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#8f42ec',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:hover:after' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control('line_more_option',
+            [
+                'label'     => esc_html__( 'Line', 'easy-addons' ),
+                'type'      => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_control('line_color',
+            [
+                'label'     => esc_html__( 'Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#f0e3ff',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:before' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:after' => 'border-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+    }
+    private function getBoxStyle()
+    {
+        $this->start_controls_section('getBoxStyle', [
+            'label' => __('Box', 'easy-addons'),
+            'tab'   => Controls_Manager::TAB_STYLE,
+        ]);
+
+        /* Start Tab */
+        $this->start_controls_tabs('box_tab',
+            [
+                'separator' => 'before'
+            ]
+        );
+        // normal tab
+        $this->start_controls_tab('box_normal',
+            [
+                'label' => __( 'Normal', 'easy-addons' ),
+            ]
+        );
+        $this->add_control('box_bg',
+            [
+                'label'     => __( 'Background', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-inner' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-inner:before' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Border::get_type(),
+            [
+                'name'     => 'box_border',
+                'label'    => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-inner, {{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-inner:before',
+                'fields_options'  => [
+                    'border'      => [
+                        'default' => 'solid',
+                    ],
+                    'width'       => [
+                        'default' => [
+                            'top'      => '1',
+                            'right'    => '1',
+                            'bottom'   => '1',
+                            'left'     => '1',
+                            'isLinked' => true,
+                        ],
+                    ],
+                    'color' => [
+                        'default' => '#eee',
+                    ],
+                ],
+            ]
+        );
+        $this->add_responsive_control('box_radius',
+            [
+                'label'      => __( 'Border Radius', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'top'      => '8',
+                    'right'    => '8',
+                    'bottom'   => '8',
+                    'left'     => '8',
+                    'isLinked' => true,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Box_Shadow::get_type(),
+            [
+                'name'     => 'box_shadow',
+                'label'    => __( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-inner',
+            ]
+        );
+        $this->add_responsive_control('box_padding',
+            [
+                'label'      => esc_html__( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'top'    => '25',
+                    'right'  => '30',
+                    'bottom' => '30',
+                    'left'   => '30',
+                    'unit'   => 'px',
+                    'isLinked' => false
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column .el-timeline-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+        // hover tab
+        $this->start_controls_tab( 'box_hover',
+            [
+                'label' => __( 'Hover', 'easy-addons' ),
+            ]
+        );
+        $this->add_control('box_bg_hover',
+            [
+                'label'     => __( 'Background', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:hover .el-timeline-inner' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:hover .el-timeline-inner:before' => 'background: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Border::get_type(),
+            [
+                'name'     => 'box_border_hv',
+                'label'    => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-column:hover .el-timeline-inner, {{WRAPPER}} .ea-timeline .el-timeline-column:hover .el-timeline-inner:before',
+                'fields_options'  => [
+                    'border'      => [
+                        'default' => 'solid',
+                    ],
+                    'width'       => [
+                        'default' => [
+                            'top'      => '1',
+                            'right'    => '1',
+                            'bottom'   => '1',
+                            'left'     => '1',
+                            'isLinked' => true,
+                        ],
+                    ],
+                    'color' => [
+                        'default' => '#8f42ec',
+                    ],
+                ],
+            ]
+        );
+        $this->add_responsive_control('box_radius_hv',
+            [
+                'label'      => __( 'Border Radius', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:hover .el-timeline-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_group_control(Group_Control_Box_Shadow::get_type(),
+            [
+                'name'     => 'box_shadow_hv',
+                'label'    => __( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .ea-timeline .el-timeline-column:hover .el-timeline-inner',
+                'fields_options' => [
+                    'box_shadow_type' => [
+                        'default'     =>'yes'
+                    ],
+                    'box_shadow'  => [
+                        'default' => [
+                            'horizontal' => 0,
+                            'vertical'   => 0,
+                            'blur'       => 30,
+                            'spread'     => 0,
+                            'color'      => 'rgb(0 0 0 / 8%)'
+                        ]
+                    ]
+                ],
+            ]
+        );
+        $this->add_responsive_control('box_padding_hv',
+            [
+                'label'      => esc_html__( 'Padding', 'easy-addons' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-timeline .el-timeline-column:hover .el-timeline-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+        /* end tab */
 
         $this->end_controls_section();
     }
@@ -413,6 +856,9 @@ class eaTimeline extends Widget_Base {
         $this->getTitleStyle();
         $this->getContentStyle();
         $this->getButtonStyle();
+        $this->getDateStyle();
+        $this->getShapeStyle();
+        $this->getBoxStyle();
 
     }
 
@@ -426,7 +872,7 @@ class eaTimeline extends Widget_Base {
         $default = [
             'posts_per_page' => $post_per_page ? $post_per_page : -1,
             'post_type'      => $source ? $source : 'posts',
-            'orderby'        => $orderby,
+            'orderBy'        => $orderby,
             'order'          => $order,
         ];
         $posts = new \WP_Query($default)
