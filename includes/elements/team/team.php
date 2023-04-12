@@ -630,6 +630,41 @@ class ea_team extends Widget_Base {
 
         $this->end_controls_section();
     }
+	private function getBackgroundOverlayStyle() {
+        $this->start_controls_section('ea_team_box_bg_overlay_style', [
+            'label' => __('Background Overlay', 'easy-addons'),
+            'tab'   => Controls_Manager::TAB_STYLE
+        ]);
+        $this->add_group_control(Group_Control_Background::get_type(),
+			[
+				'name'     => 'ea_team_box_bg_overlay_bg',
+				'label'    => esc_html__( 'Background', 'easy-addons' ),
+				'types'    => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .ea-team-item.style-2:before',
+			]
+		);
+        $this->add_control('ea_team_box_bg_overlay_opacity',
+			[
+				'label'      => esc_html__( 'Opacity', 'easy-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range'  => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 1,
+						'step' => 0.1,
+					]
+				],
+				'default' => [
+					'size' => 0.4,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .ea-team-item.style-2:hover:before' => 'opacity: {{SIZE}};',
+				],
+			]
+		);
+        $this->end_controls_section();
+    }
     private function getTeamBoxStyle() {
         $this->start_controls_section('ea_team_box_style', [
             'label' => __('Team Member box', 'easy-addons'),
@@ -795,6 +830,7 @@ class ea_team extends Widget_Base {
         $this->getNameStyle();
         $this->getDesignationStyle();
         $this->getSocialProfileStyle();
+        $this->getBackgroundOverlayStyle();
         $this->getTeamBoxStyle();
 	}
 

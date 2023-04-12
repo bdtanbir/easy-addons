@@ -34,6 +34,7 @@ function ea_elementor_activated_modules() {
     $ea_elementor_default_keys = [
         'ea-button',
         'ea-flip-card',
+        'ea-timeline',
         'ea-team'
     ];
 

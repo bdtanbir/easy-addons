@@ -308,13 +308,14 @@ body {
     height: 100%;
     left: 0;
     top: 0;
-    opacity: 0.4;
+    opacity: 0;
     transform-origin: left;
     transform: rotateY(105deg);
     transition: .3s;
 }
 .ea-team-item.style-2:hover:before {
     transform: rotateY(0);
+    opacity: 0.4;
 }
 .ea-team-item.style-2 .ea-team-member-image {
     height: 300px;
