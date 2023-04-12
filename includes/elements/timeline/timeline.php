@@ -473,6 +473,7 @@ class eaTimeline extends Widget_Base {
             [
                 'label'     => __( 'Background', 'easy-addons' ),
                 'type'      => Controls_Manager::COLOR,
+                'default'   => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} .ea-timeline .el-timeline-inner .el-timeline-content .ea-button:hover' => 'background: {{VALUE}}',
                 ],
