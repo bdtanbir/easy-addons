@@ -11,6 +11,10 @@ function ea_enqueue_assets() {
         '//fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap'
     );
     wp_enqueue_style(
+        'lib-lineawesome-css',
+        '//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css'
+    );
+    wp_enqueue_style(
         'bootstrap-min-css',
         EASY_ADDONS_DIR_URL.'assets/frontend/css/bootstrap/css/bootstrap.min.css'
     );
@@ -34,6 +38,10 @@ add_action('wp_enqueue_scripts', 'ea_enqueue_assets');
 
 // register editor stylesheet
 function enqueue_editor_styles() {
+    wp_enqueue_style(
+        'lib-lineawesome-css',
+        '//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css'
+    );
     wp_enqueue_style(
         'editor_style',
         EASY_ADDONS_DIR_URL . 'assets/css/editor.css'

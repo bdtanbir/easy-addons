@@ -58,6 +58,16 @@
                         <input type="checkbox" id="ea-team" name="ea-team" <?php checked( 1, $this->ea_elementor_get_settings['ea-team'], true ); ?>>
                         <label for="ea-team"></label>
                     </div>
+
+                    <div class="ea-checkbox">
+                        <div class="ea-elements-info">
+                            <p class="ea-title">
+                                <?php esc_html_e('Testimonial', 'easy-addons'); ?>
+                            </p>
+                        </div>
+                        <input type="checkbox" id="ea-testimonial" name="ea-testimonial" <?php checked( 1, $this->ea_elementor_get_settings['ea-testimonial'], true ); ?>>
+                        <label for="ea-testimonial"></label>
+                    </div>
                     
                 </div>
             </div>

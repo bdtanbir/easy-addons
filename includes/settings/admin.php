@@ -7,7 +7,7 @@ if( ! defined( 'ABSPATH' ) ) exit(); // Exit if accessed directly
 
 class ea_admin_menu_setting_class {
 
-	public $ea_elementor_default_keys = [ 'ea-button', 'ea-flip-card', 'ea-team', 'ea-timeline' ];
+	public $ea_elementor_default_keys = [ 'ea-button', 'ea-flip-card', 'ea-team', 'ea-timeline', 'ea-testimonial' ];
 
 	private $ea_elementor_default_settings;
 

@@ -28,6 +28,9 @@ class eaProWidgetsRegister {
         if( $is_component_active['ea-timeline'] ) {
             require_once EASY_ADDONS_DIR_PATH . 'includes/elements/timeline/timeline.php';
         }
+        if( $is_component_active['ea-testimonial'] ) {
+            require_once EASY_ADDONS_DIR_PATH . 'includes/elements/testimonial/testimonial.php';
+        }
     
         do_action('ea_register_elements', $is_component_active);
     }

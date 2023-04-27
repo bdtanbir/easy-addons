@@ -35,7 +35,8 @@ function ea_elementor_activated_modules() {
         'ea-button',
         'ea-flip-card',
         'ea-timeline',
-        'ea-team'
+        'ea-team',
+        'ea-testimonial'
     ];
 
     $ea_elementor_default_settings  = array_fill_keys( $ea_elementor_default_keys, true );
